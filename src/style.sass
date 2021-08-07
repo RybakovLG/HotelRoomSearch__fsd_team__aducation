@@ -1,0 +1,180 @@
+@import "variables.sass"
+
+//MAIN
+
+body
+  font-family: Montserrat, sans-serif
+  @extend %mainSizeFont
+
+  section
+    max-width: 1440px
+    margin: auto
+    border-bottom: 1px $DarkShade-25 solid
+    position: relative
+    &::before
+      content: url("icons/Logo_grey.svg")
+      opacity: .25
+      position: absolute
+      top: 30px
+      left: 30px
+
+h1
+  @extend %widgetTitleSizeFont
+  margin: 0
+
+h2
+  @extend %itemTitleSizeFont
+  margin: 0
+
+h3
+  @extend %labelSizeFont
+  margin: 0
+
+ul
+  padding: 0
+
+  li
+    list-style: none
+
+
+//FONTS AND COLORS------------------------
+
+.section-colors-type
+  padding: 145px 150px
+  display: flex
+  justify-content: space-between
+
+.colors__item
+  margin-bottom: 20px
+
+.colors__box
+  width: 70px
+  height: 70px
+  background: #6FCF97
+  display: inline-block
+  border-radius: 6px
+  margin-right: 40px
+  vertical-align: middle
+
+  &.--dark100-box
+    background: $DarkShade-100
+
+  &.--dark75-box
+    background: $DarkShade-75
+
+  &.--dark50-box
+    background: $DarkShade-50
+
+  &.--dark25-box
+    background: $DarkShade-25
+
+  &.--dark5-box
+    background: $DarkShade-5
+
+  &.--purple-box
+    background: $Purple
+
+  &.--green-box
+    background: $Green
+
+.colors__desc
+  display: inline-block
+  vertical-align: middle
+
+.colors__name
+  margin-bottom: 5px
+
+.colors__code
+  font-size: 19px
+
+.fonts__item
+  margin-bottom: 50px
+
+.--sizeLikeH1
+    @extend %widgetTitleSizeFont
+
+.--sizeLikeH2
+    @extend %itemTitleSizeFont
+
+.--sizeLikeH3
+    @extend %labelSizeFont
+
+.font__use
+  display: inline-block
+  font-weight: 400
+  color: $DarkShade-25
+  margin-right: 30px
+  width: 50px
+  text-align: end
+
+.font__desc
+  display: inline-block
+  white-space: normal
+  vertical-align: text-top
+  max-width: 370px
+
+//FORM ELEMENTS-------------------------------
+
+.section-form-elements
+  padding: 140px 140px 130px 140px
+  height: 100vh
+  display: grid
+  grid-template-columns: 266px 320-266px 1fr 320px 1fr 320px
+
+  li
+    position: relative
+
+.fields-list
+  grid-column: 1 / 3
+  li:not(:last-child)
+    margin-bottom: 40px
+  li:nth-child(-n+3)
+    margin-bottom: 20px
+  li:nth-last-child(-n+2)
+    width: 266px
+  li:nth-child(5)
+    max-height: 70px
+    display: flex
+    align-content: space-between
+    flex-direction: column
+    flex-wrap: wrap
+    label
+      width: 120px
+
+
+.title-label
+  margin-bottom: 5px
+
+.label-state
+  position: absolute
+  top: 0
+  right: 0
+  padding: 0
+  font-weight: 400
+  color: $DarkShade-50
+
+.text-field
+  height: 44px
+  border: 1px $DarkShade-25 solid
+  border-radius: 4px
+  width: calc(100% - 30px)
+  padding: 0 15px
+  &::placeholder
+    color: $DarkShade-25
+  &:hover,
+  &:focus,
+  &.--onFocus
+    border-color: $DarkShade-50
+    outline: 0
+  &.--subscription
+    background: url("icons/arrow_forward_subscription.svg") no-repeat calc(100% - 15px) center
+  &.--onFocus::placeholder
+    color: $DarkShade-75
+
+  &.--dropdown
+    display: inline-block
+    line-height: 44px
+    background: url("icons/expand_icon.svg") no-repeat calc(100% - 15px) center
+    &::placeholder
+      color: $DarkShade-75
+
