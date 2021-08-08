@@ -8,6 +8,10 @@
   <link rel="stylesheet" href="src/fonts/fonts.css">
   <link rel="stylesheet" href="src/normalize.css">
   <link rel="stylesheet" href="src/style.css">
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+  <script src="src/jquery-plugins/pretty-dropdowns/dist/js/jquery.prettydropdowns.js"></script>
+  <link rel="stylesheet" href="src/jquery-plugins/pretty-dropdowns/dist/css/prettydropdowns.css">
   <title>Document</title>
 </head>
   <body>
@@ -127,7 +131,55 @@
         <input class="text-field --subscription" type="text" placeholder="Email">
       </li>
     </ul>
-    <ul class="checkboxes-list"></ul>
+    <ul class="ui-checkboxes-list">
+      <li>
+        <h3 class="title-label--hi">Checkbox Buttons</h3>
+        <ul class="check-box-list">
+          <li class="check-box-list__item">
+            <label class="check-box">Можно курить
+              <input class="visually-hidden" type="checkbox">
+              <span class="check-box__custom"></span>
+            </label>
+          </li>
+          <li class="check-box-list__item">
+            <label class="check-box">Можно с питомцами
+              <input class="visually-hidden" type="checkbox" checked>
+              <span class="check-box__custom"></span>
+            </label>
+          </li>
+          <li class="check-box-list__item">
+            <label class="check-box">Можно пригласить гостей <br> (до 10 человек)
+              <input class="visually-hidden" type="checkbox" checked>
+              <span class="check-box__custom"></span>
+            </label>
+          </li>
+        </ul>
+      <li>
+        <h3 class="title-label--hi">Radio Buttons</h3>
+          <label class="radio-btn">
+            <input checked class="visually-hidden" name="gender" type="radio">
+            <span class="radio-btn__custom"></span>
+            <span class="radio-btn__text">Мужчина</span>
+          </label>
+          <label class="radio-btn">
+            <input class="visually-hidden" name="gender" type="radio">
+            <span class="radio-btn__custom"></span>
+            <span class="radio-btn__text">Женщина</span>
+          </label>
+      </li>
+      <li>
+         <h3 class="title-label--hi">Toggle</h3>
+
+      </li>
+      <li>
+        <h3 class="title-label--hi">like button</h3>
+
+      </li>
+      <li>
+         <h3 class="title-label--hi">rate button</h3>
+
+      </li>
+    </ul>
     <ul class="btns-sliders-list"></ul>
     <ul class="dropdowns-list"></ul>
     <ul class="expandables-list"></ul>
