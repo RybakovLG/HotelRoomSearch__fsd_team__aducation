@@ -115,6 +115,7 @@ ul
 
 //FORM ELEMENTS-------------------------------
 
+//TEXT FIELDS---------
 .section-form-elements
   padding: 140px 140px 130px 140px
   height: 100vh
@@ -141,9 +142,10 @@ ul
     label
       width: 120px
 
-
 .title-label
   margin-bottom: 5px
+  &--hi
+    margin-bottom: 16px
 
 .label-state
   position: absolute
@@ -170,7 +172,6 @@ ul
     background: url("icons/arrow_forward_subscription.svg") no-repeat calc(100% - 15px) center
   &.--onFocus::placeholder
     color: $DarkShade-75
-
   &.--dropdown
     display: inline-block
     line-height: 44px
@@ -178,3 +179,70 @@ ul
     &::placeholder
       color: $DarkShade-75
 
+//CHECKBOX BUTTONS--------
+
+.ui-checkboxes-list
+  grid-column: 4 / 5
+
+  >li:not(:last-child)
+    margin-bottom: 40px
+
+.check-box-list
+
+  >li:not(:last-child)
+    margin-bottom: 5px
+
+//CHECKBOX---
+.check-box
+  display: inline-block
+  width: 100%
+  position: relative
+  padding-left: 30px
+  color: $DarkShade-50
+
+  input
+
+    &:checked ~ .check-box__custom
+      border-color: $Purple
+      background: url("icons/chckbox--checked_icon.svg") no-repeat center/55%
+
+  .check-box__custom
+    position: absolute
+    left: 0
+    top: 0
+    width: 20px
+    height: 20px
+    border: 1px $DarkShade-25 solid
+    border-radius: 4px
+
+//RADIO BUTTONS
+.radio-btn
+  position: relative
+  padding-left: 30px
+  color: $DarkShade-50
+
+  input
+    &:checked ~ .radio-btn__text
+      color: $DarkShade-75
+    &:checked ~ .radio-btn__custom
+      border-color: $Purple
+      &::before
+        content: ''
+        position: absolute
+        top: 4px
+        left: 4px
+        width: 12px
+        height: 12px
+        border-radius: 50%
+        background: $Purple-gradient no-repeat
+
+  .radio-btn__custom
+    position: absolute
+    left: 0
+    width: 20px
+    height: 20px
+    border: 1px $DarkShade-25 solid
+    border-radius: 50%
+
+  &+&
+    margin-left: 20px
