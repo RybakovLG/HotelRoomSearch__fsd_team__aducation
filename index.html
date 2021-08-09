@@ -12,6 +12,15 @@
 
   <script src="src/jquery-plugins/pretty-dropdowns/dist/js/jquery.prettydropdowns.js"></script>
   <link rel="stylesheet" href="src/jquery-plugins/pretty-dropdowns/dist/css/prettydropdowns.css">
+
+
+  <script src="node_modules/jquery-bar-rating/dist/jquery.barrating.min.js"></script>
+  <link rel="stylesheet" href="src/jquery-plugins/Stars-rating/css-stars.css">
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+  <link rel="stylesheet" href="src/jquery-plugins/ion-rangeslider/css/ion.rangeSlider.css">
+
   <title>Document</title>
 </head>
   <body>
@@ -97,7 +106,7 @@
 <!--FORM ELEMENTS-->
 
   <section class="section-form-elements">
-    <ul class="fields-list">
+    <ul class="ui-fields-list">
       <li>
         <h3 class="title-label">Text Field</h3>
         <span class="label-state --sizeLikeH3">Default</span>
@@ -168,26 +177,73 @@
           </label>
       </li>
       <li>
-         <h3 class="title-label--hi">Toggle</h3>
-
+        <h3 class="title-label--hi">Toggle</h3>
+        <label class="toggle-btn">
+          <input class="visually-hidden" checked type="checkbox">
+          <span class="toggle-btn__custom"></span>
+          Получать спецпредложения
+        </label>
+        <label class="toggle-btn">
+          <input class="visually-hidden" type="checkbox">
+          <span class="toggle-btn__custom"></span>
+          Получать спецпредложения
+        </label>
       </li>
       <li>
         <h3 class="title-label--hi">like button</h3>
-
+        <label class="like-btn">
+          <input class="visually-hidden" type="checkbox">
+          <span class="like-btn__sum">2</span>
+        </label>
+        <label class="like-btn">
+          <input checked class="visually-hidden" type="checkbox">
+          <span class="like-btn__sum">12</span>
+        </label>
       </li>
       <li>
          <h3 class="title-label--hi">rate button</h3>
-
+        <div class="stars-rating">
+          <select class="stars-rating__select">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option selected value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+        <div class="stars-rating">
+          <select class="stars-rating__select">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option selected value="5">5</option>
+          </select>
+        </div>
       </li>
     </ul>
-    <ul class="btns-sliders-list"></ul>
-    <ul class="dropdowns-list"></ul>
-    <ul class="expandables-list"></ul>
-    <ul class="rich-checkboxes-list"></ul>
-    <ul class="bullets-list"></ul>
-    <ul class="bonuses-list"></ul>
-    <ul class="comments-list"></ul>
+    <ul class="ui-btns-sliders-list">
+      <li>
+        <div class="range-slider">
+          <h3 class="title-label--hi">Range Slider</h3>
+          <span class="js-range-slider__info">123</span>
+          <input type="text" class="js-range-slider" name="my_range" value=""/>
+        </div>
+      </li>
+      <li>
+        <h3 class="title-label--hi">buttons</h3>
+      </li>
+      <li>
+        <h3 class="title-label--hi">pagination</h3>
+      </li>
+    </ul>
+    <ul class="ui-dropdowns-list"></ul>
+    <ul class="ui-expandables-list"></ul>
+    <ul class="ui-rich-checkboxes-list"></ul>
+    <ul class="ui-bullets-list"></ul>
+    <ul class="ui-bonuses-list"></ul>
+    <ul class="ui-comments-list"></ul>
   </section>
-<!--<script type="text/javascript" src="dist/main.bundle.js"></script>-->
+<script type="text/javascript" src="src/app.js"></script>
   </body>
 </html>

@@ -9,7 +9,7 @@ body
   section
     max-width: 1440px
     margin: auto
-    border-bottom: 1px $DarkShade-25 solid
+    border-bottom: 1px $DarkShade-5 solid
     position: relative
     &::before
       content: url("icons/Logo_grey.svg")
@@ -125,8 +125,10 @@ ul
   li
     position: relative
 
-.fields-list
+.ui-fields-list
   grid-column: 1 / 3
+  min-width: 320px
+  margin-right: 25px
   li:not(:last-child)
     margin-bottom: 40px
   li:nth-child(-n+3)
@@ -173,11 +175,13 @@ ul
   &.--onFocus::placeholder
     color: $DarkShade-75
   &.--dropdown
+    cursor: pointer
     display: inline-block
     line-height: 44px
     background: url("icons/expand_icon.svg") no-repeat calc(100% - 15px) center
     &::placeholder
       color: $DarkShade-75
+
 
 //CHECKBOX BUTTONS--------
 
@@ -187,62 +191,230 @@ ul
   >li:not(:last-child)
     margin-bottom: 40px
 
+  .toggle-btn
+    margin-bottom: 14px
+
+  .like-btn
+    margin-right: 10px
+
+  .stars-rating
+    margin-right: 20px
+
 .check-box-list
 
   >li:not(:last-child)
     margin-bottom: 5px
 
-//CHECKBOX---
+
+//CHECKBOX-----
+
 .check-box
   display: inline-block
   width: 100%
   position: relative
   padding-left: 30px
   color: $DarkShade-50
+  cursor: pointer
+  &:hover
+    color: $DarkShade-75
+    .check-box__custom
+      border-color: $DarkShade-50
+    input:checked ~ .check-box__custom
+      opacity: .8
 
   input
-
     &:checked ~ .check-box__custom
       border-color: $Purple
       background: url("icons/chckbox--checked_icon.svg") no-repeat center/55%
 
-  .check-box__custom
-    position: absolute
-    left: 0
-    top: 0
-    width: 20px
-    height: 20px
-    border: 1px $DarkShade-25 solid
-    border-radius: 4px
+.check-box__custom
+  position: absolute
+  left: 0
+  top: 0
+  width: 20px
+  height: 20px
+  border: 1px $DarkShade-25 solid
+  border-radius: 4px
 
-//RADIO BUTTONS
+
+//RADIO BUTTON----
 .radio-btn
   position: relative
   padding-left: 30px
   color: $DarkShade-50
+  cursor: pointer
 
-  input
-    &:checked ~ .radio-btn__text
+  input:checked
+    ~ .radio-btn__custom::before
+      content: ''
+      position: absolute
+      top: 4px
+      left: 4px
+      width: 12px
+      height: 12px
+      border-radius: 50%
+      background: $Purple-gradient no-repeat
+    ~ .radio-btn__text
       color: $DarkShade-75
-    &:checked ~ .radio-btn__custom
-      border-color: $Purple
-      &::before
-        content: ''
-        position: absolute
-        top: 4px
-        left: 4px
-        width: 12px
-        height: 12px
-        border-radius: 50%
-        background: $Purple-gradient no-repeat
 
-  .radio-btn__custom
-    position: absolute
-    left: 0
-    width: 20px
-    height: 20px
-    border: 1px $DarkShade-25 solid
-    border-radius: 50%
+  &:hover
+    color: $DarkShade-75
+    .radio-btn__custom
+      border-color: $DarkShade-50
+    input:checked ~ .radio-btn__custom
+        opacity: .8
 
   &+&
     margin-left: 20px
+
+.radio-btn__custom
+  position: absolute
+  left: 0
+  width: 20px
+  height: 20px
+  border: 1px $DarkShade-25 solid
+  border-radius: 50%
+
+
+
+
+//TOGGLE----------
+.toggle-btn
+  position: relative
+  padding-left: 50px
+  cursor: pointer
+  color: $DarkShade-75
+  display: inline-block
+
+  input
+    &:checked ~ .toggle-btn__custom
+      border-color: $Purple
+      &::before
+        transition: .2s
+        transform: translateX(20px)
+        background: $Purple-gradient no-repeat
+
+  &:hover
+    opacity: .8
+
+.toggle-btn__custom
+  position: absolute
+  left: 0
+  width: 40px
+  height: 20px
+  border: 1px $DarkShade-25 solid
+  border-radius: 10px
+  &::before
+    content: ''
+    position: absolute
+    top: 4px
+    left: 4px
+    width: 12px
+    height: 12px
+    border-radius: 50%
+    background: $DarkShade-25 no-repeat
+    transition: .2s
+
+
+
+
+//LIKE BUTTON---------
+
+.like-btn
+  box-sizing: border-box
+  position: relative
+  display: inline-block
+  min-width: 40px
+  height: 20px
+  border-radius: 10px
+  text-align: end
+  padding: 0 10px 0 15px
+  font-size: 10px
+  line-height: 20px
+  &:hover
+    opacity: .8
+    cursor: pointer
+  input:checked
+    ~ .like-btn__sum
+      color: $Purple
+      &::before
+        border-color: $Purple
+        background-image: url("icons/like--active-icon.svg")
+
+
+.like-btn__sum
+  color: $DarkShade-25
+  &::before
+    content: ''
+    position: absolute
+    border: 1px $DarkShade-25 solid
+    border-radius: 10px
+    width: 100%
+    height: auto
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: url("icons/like-icon.svg") no-repeat 5px center
+
+//UI-SLIDERS-LIST---------
+
+.ui-btns-sliders-list
+  grid-column: 5 / 6
+  min-width: 320px
+
+//SLIDER ----------
+
+.range-slider
+  .title-label--hi
+    display: inline-block
+  .js-range-slider__info
+    float: right
+    font-size: 12px
+    color: $DarkShade-50
+
+.irs
+  position: relative
+  display: block
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  font-size: 12px
+  font-family: Arial, sans-serif
+  height: 10px
+
+.irs-line
+  box-sizing: border-box
+  position: relative
+  display: block
+  height: 6px
+  border: 1px solid rgba(31, 32, 65, 0.25)
+  border-radius: 3px
+  overflow: hidden
+  outline: none !important
+
+.irs-bar
+  position: absolute
+  display: block
+  left: 0
+  top: 0
+  height: 6px
+  width: 0
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
+
+.irs-handle
+  position: absolute
+  display: block
+  height: 12px
+  width: 12px
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
+  border: 2px solid #FFFFFF
+  border-radius: 50%
+  cursor: pointer
+  z-index: 1
+  top: -5px
+  left: 0
+
