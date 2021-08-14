@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
@@ -13,13 +13,13 @@
   <script src="src/jquery-plugins/pretty-dropdowns/dist/js/jquery.prettydropdowns.js"></script>
   <link rel="stylesheet" href="src/jquery-plugins/pretty-dropdowns/dist/css/prettydropdowns.css">
 
-
   <script src="node_modules/jquery-bar-rating/dist/jquery.barrating.min.js"></script>
   <link rel="stylesheet" href="src/jquery-plugins/Stars-rating/css-stars.css">
 
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+  <script src="src/jquery-plugins/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
   <link rel="stylesheet" href="src/jquery-plugins/ion-rangeslider/css/ion.rangeSlider.css">
+
+  <script src="src/jquery-plugins/simplePagination.js-master/jquery.simplePagination.js"></script>
 
   <title>Document</title>
 </head>
@@ -232,17 +232,250 @@
       </li>
       <li>
         <h3 class="title-label--hi">buttons</h3>
+        <button class="button-base">CLICK ME</button>
+        <button class="button-base --hover">CLICK ME</button>
+        <button class="button-base --empty">CLICK ME</button>
+        <button class="button-base --empty --hover">CLICK ME</button>
+        <br>
+        <button class="button-base --mini">CLICK ME</button>
+        <button class="button-base --mini --hover">CLICK ME</button>
+        <button class="button-base --finish">перейти к оплате</button>
       </li>
       <li>
         <h3 class="title-label--hi">pagination</h3>
+        <div class="pagination-holder"></div>
+
       </li>
     </ul>
-    <ul class="ui-dropdowns-list"></ul>
-    <ul class="ui-expandables-list"></ul>
-    <ul class="ui-rich-checkboxes-list"></ul>
-    <ul class="ui-bullets-list"></ul>
-    <ul class="ui-bonuses-list"></ul>
-    <ul class="ui-comments-list"></ul>
+    <ul class="ui-dropdowns-list">
+      <li>
+        <h3 class="title-label">dropdown</h3>
+        <span class="label-state --sizeLikeH3">Default</span>
+        <label class="text-field --dropdown">2 спальни, 2 кровати...</label>
+      </li>
+      <li>
+        <h3 class="title-label">dropdown</h3>
+        <span class="label-state --sizeLikeH3">expanded</span>
+        <div class="dropdown">
+          <input id="dropD-for-rooms" class="dropdown__expand-check visually-hidden" type="checkbox">
+          <label for="dropD-for-rooms" class="text-field --dropdown">2 спальни, 2 кровати...</label>
+          <ul class="dropdown__exp-list --shadow">
+            <li class="exp-list__item" >
+              <span class="exp-list__name">спальни</span>
+              <div class="exp-list__count">
+                <button class="count__btn-minus">-</button>
+                <input type="text" readonly value="2" class="count__input">
+                <button  class="count__btn-plus">+</button>
+              </div>
+            </li>
+            <li class="exp-list__item" >
+              <span class="exp-list__name">кровати</span>
+              <div class="exp-list__count">
+                <button class="count__btn-minus">-</button>
+                <input type="text" readonly value="2" class="count__input">
+                <button  class="count__btn-plus">+</button>
+              </div>
+            </li>
+            <li class="exp-list__item" >
+              <span class="exp-list__name">ванные комнаты</span>
+              <div class="exp-list__count">
+                <button disabled class="count__btn-minus">-</button>
+                <input type="text" readonly value="0" class="count__input">
+                <button  class="count__btn-plus">+</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <h3 class="title-label">dropdown</h3>
+        <form class="dropdown --for-people">
+          <input id="dropD-for-peoples" class="dropdown__expand-check visually-hidden" type="checkbox">
+          <label for="dropD-for-peoples" class="text-field --dropdown">Сколько гостей</label>
+          <ul class="dropdown__exp-list --shadow">
+            <li class="exp-list__item" >
+              <span class="exp-list__name">взрослые</span>
+              <div class="exp-list__count">
+                <button type="button" disabled class="count__btn-minus">-</button>
+                <input type="text" readonly value="0" class="count__input">
+                <button type="button"  class="count__btn-plus">+</button>
+              </div>
+            </li>
+            <li class="exp-list__item" >
+              <span class="exp-list__name">дети</span>
+              <div class="exp-list__count">
+                <button type="button" disabled class="count__btn-minus">-</button>
+                <input type="text" readonly value="0" class="count__input">
+                <button type="button"  class="count__btn-plus">+</button>
+              </div>
+            </li>
+            <li class="exp-list__item" >
+              <span class="exp-list__name">младенцы</span>
+              <div class="exp-list__count">
+                <button type="button" disabled class="count__btn-minus">-</button>
+                <input type="text" readonly value="0" class="count__input">
+                <button type="button" class="count__btn-plus">+</button>
+              </div>
+            </li>
+            <li class="exp-list__buttons">
+              <button type="reset" class="button-base --mini visibility-hidden">очистить</button>
+              <button type="submit" class="button-base --mini">применить</button>
+            </li>
+          </ul>
+        </form>
+      </li>
+      <li>
+        <h3 class="title-label">dropdown</h3>
+        <form class="dropdown --for-people">
+          <input id="dropD-for-peoples_2" class="dropdown__expand-check visually-hidden" type="checkbox">
+          <label for="dropD-for-peoples_2" class="text-field --dropdown">3 гостя</label>
+          <ul class="dropdown__exp-list --shadow">
+            <li class="exp-list__item" >
+              <span class="exp-list__name">взрослые</span>
+              <div class="exp-list__count">
+                <button type="button" class="count__btn-minus">-</button>
+                <input type="text" readonly value="2" class="count__input">
+                <button type="button"  class="count__btn-plus">+</button>
+              </div>
+            </li>
+            <li class="exp-list__item" >
+              <span class="exp-list__name">дети</span>
+              <div class="exp-list__count">
+                <button type="button" class="count__btn-minus">-</button>
+                <input type="text" readonly value="1" class="count__input">
+                <button type="button"  class="count__btn-plus">+</button>
+              </div>
+            </li>
+            <li class="exp-list__item" >
+              <span class="exp-list__name">младенцы</span>
+              <div class="exp-list__count">
+                <button type="button" disabled class="count__btn-minus">-</button>
+                <input type="text" readonly value="0" class="count__input">
+                <button type="button" class="count__btn-plus">+</button>
+              </div>
+            </li>
+            <li class="exp-list__buttons">
+              <button type="reset" class="button-base --mini">очистить</button>
+              <button type="submit" class="button-base --mini">применить</button>
+            </li>
+          </ul>
+        </form>
+      </li>
+    </ul>
+    <ul class="ui-expandable-list">
+      <li>
+        <details  class="expandable-list">
+          <summary class="text-field --dropdown --check-list">expandable checkbox list</summary>
+        </details>
+      </li>
+      <li>
+        <details  open class="expandable-list">
+          <summary class="text-field --dropdown --check-list">expandable checkbox list</summary>
+          <ul class="check-box-list">
+            <li class="check-box-list__item">
+              <label class="check-box">Завтрак
+                <input class="visually-hidden" type="checkbox">
+                <span class="check-box__custom"></span>
+              </label>
+            </li>
+            <li class="check-box-list__item">
+              <label class="check-box">Письменный стол
+                <input class="visually-hidden" checked type="checkbox">
+                <span class="check-box__custom"></span>
+              </label>
+            </li>
+            <li class="check-box-list__item">
+              <label class="check-box">Стул для кормления
+                <input class="visually-hidden" checked type="checkbox">
+                <span class="check-box__custom"></span>
+              </label>
+            </li>
+            <li class="check-box-list__item">
+              <label class="check-box">Кроватка
+                <input class="visually-hidden" checked type="checkbox">
+                <span class="check-box__custom"></span>
+              </label>
+            </li>
+            <li class="check-box-list__item">
+              <label class="check-box">Телевизор
+                <input class="visually-hidden" type="checkbox">
+                <span class="check-box__custom"></span>
+              </label>
+            </li>
+            <li class="check-box-list__item">
+              <label class="check-box">Шампунь
+                <input class="visually-hidden" type="checkbox">
+                <span class="check-box__custom"></span>
+              </label>
+            </li>
+          </ul>
+
+
+        </details>
+
+      </li>
+    </ul>
+    <ul class="ui-rich-checkboxes-list">
+      <li>
+        <h3 class="title-label--hi">rich Checkbox Buttons</h3>
+        <ul class="check-box-list">
+          <li class="check-box-list__item">
+            <label class="check-box --rich">Широкий коридор
+              <input class="visually-hidden" type="checkbox">
+              <span class="check-box__custom"></span>
+              <p class="check-box__desc">Ширина коридоров в номере не менее 91 см.</p>
+            </label>
+          </li>
+          <li class="check-box-list__item">
+            <label class="check-box --rich">Помощник для инвалидов
+              <input class="visually-hidden" type="checkbox">
+              <span class="check-box__custom"></span>
+              <p class="check-box__desc">На 1 этаже вас встретит специалист  и проводит до номера.</p>
+            </label>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="ui-bullets-list">
+      <li>
+        <h3 class="title-label--hi">bullet list</h3>
+        <ul class="bullet-list">
+          <li class="bullet-list__item">Нельзя с питомцами</li>
+          <li class="bullet-list__item">Без вечеринок и мероприятий</li>
+          <li class="bullet-list__item">Время прибытия — после 13:00,
+            а выезд до 12:00</li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="ui-bonuses-list">
+      <ul class="bonuses-list">
+        <li class="bonuses-item">
+          <object class="bonuses-item__icon" type="image/svg+xml" data="src/icons/insert_emoticon.svg"></object>
+          <span class="bonuses-item__title">Комфорт</span>
+          <span class="bonuses-item__desc">Шумопоглощающие стены</span>
+        </li>
+        <li class="bonuses-item">
+          <object class="bonuses-item__icon" type="image/svg+xml" data="src/icons/location_city.svg"></object>
+          <span class="bonuses-item__title">Удобство</span>
+          <span class="bonuses-item__desc">Окно в каждой из спален</span>
+        </li>
+      </ul>
+    </ul>
+    <ul class="ui-comments-list">
+      <div class="comment">
+        <div class="comment__avatar">
+          <img width="48px" src="src/icons/p_sarafanov_48.png" alt="sarafanov">
+        </div>
+        <span class="comment__who">Мурад Сарафанов</span>
+        <span class="comment__date">5 дней назад</span>
+        <label class="like-btn comment__likes">
+          <input checked class="visually-hidden" type="checkbox">
+          <span class="like-btn__sum">12</span>
+        </label>
+        <p class="comment__text">Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.</p>
+      </div>
+    </ul>
+
   </section>
 <script type="text/javascript" src="src/app.js"></script>
   </body>
