@@ -2,33 +2,54 @@
 //GLOBAL VARIABLES
 
 //VISUALLY HIDDEN CLASS
+
 .visually-hidden
-  position: absolute
-  width: 1px
-  height: 1px
-  margin: -1px
-  border: 0
-  padding: 0
-  clip: rect(0 0 0 0)
+  position: absolute !important
+  clip: rect(1px 1px 1px 1px)
+  clip: rect(1px, 1px, 1px, 1px)
+  padding: 0 !important
+  border: 0 !important
+  height: 1px !important
+  width: 1px !important
   overflow: hidden
 
+.visibility-hidden
+  visibility: hidden
 
 
+//*
+//  outline: 1px solid red !important
 
-//COLORS
-$DarkShade-100: rgba(31, 32, 65, 1)
-$DarkShade-75: rgba(31, 32, 65, .75)
-$DarkShade-50: rgba(31, 32, 65, .5)
-$DarkShade-25: rgba(31, 32, 65, .25)
-$DarkShade-5: rgba(31, 32, 65, .05)
+//button:focus
+//  outline: max(1px, 0.1em) solid currentColor
+//  outline-offset: 0.2em
+
+
+//COLORS---------------------------
+
+$DarkShade-100: #1F2041
+$DarkShade-75: mix($DarkShade-100, white, 75)
+$DarkShade-50: mix($DarkShade-100, white, 50)
+$DarkShade-25: mix($DarkShade-100, white, 25)
+$DarkShade-10: mix($DarkShade-100, white, 10)
+$DarkShade-5:  mix($DarkShade-100, white, 5)
 $Purple: #BC9CFF
 $Green: #6FCF97
 
-$Purple-gradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
-$Green-gradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
+//$Green-gradient--50: linear-gradient(180deg, rgba(111, 207, 151, .5) 0%, rgba(102, 210, 234, .5) 100%)
 
+$Purple-gradient--50: linear-gradient(180deg, mix($Purple, white) 0%, mix(#8BA4F9, white) 100%)
+$Green-gradient--50: linear-gradient(180deg, mix($Green, white) 0%, mix(#66D2EA, white) 100%)
 
-//FONTS
+$Purple-gradient: linear-gradient(180deg, $Purple 0%, #8BA4F9 100%)
+$Green-gradient: linear-gradient(180deg, $Green 0%, #66D2EA 100%)
+
+//SHADOWS---------------------
+
+.--shadow
+  box-shadow: 0 10px 20px $DarkShade-5
+
+//FONTS--------------------------
 
 $mainFont: Montserrat, sans-serif
 
