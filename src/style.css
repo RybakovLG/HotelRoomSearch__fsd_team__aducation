@@ -17,14 +17,14 @@
   box-shadow: 0 10px 20px #f4f4f6;
 }
 
-body {
+.text-field.--dropdown, body {
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   color: #575871;
 }
 
-.expandable-list .--check-list, .exp-list__item, .simple-pagination, .button-base, .--sizeLikeH3, h3 {
+.expandable-list .--check-list, .exp-list__item, .simple-pagination, .button-base, .title-label, .--sizeLikeH3, h3 {
   font-size: 12px;
   font-weight: 700;
   line-height: 15px;
@@ -59,13 +59,13 @@ html {
 body {
   font-family: Montserrat, sans-serif;
 }
-body section {
+body > section {
   max-width: 1440px;
   margin: auto;
   border-bottom: 1px #f4f4f6 solid;
   position: relative;
 }
-body section::before {
+body > section::before {
   content: url("icons/Logo_grey.svg");
   opacity: 0.25;
   position: absolute;
@@ -88,7 +88,7 @@ h3 {
 ul {
   padding: 0;
 }
-ul li {
+ul > li {
   list-style: none;
 }
 
@@ -209,6 +209,7 @@ a:visited, a:link, a:active {
 }
 
 .title-label {
+  display: block;
   margin-bottom: 5px;
 }
 .title-label--hi {
@@ -253,16 +254,7 @@ a:visited, a:link, a:active {
   display: inline-flex;
   align-items: center;
   user-select: none;
-}
-.text-field.--dropdown:after {
-  position: absolute;
-  content: url("icons/expand_icon.svg");
-  top: 50%;
-  transform: translateY(-50%);
-  right: 15px;
-  transition: all 0.2s ease-out;
-  z-index: -1;
-  background: white no-repeat calc(100% - 15px) center;
+  background: white url("icons/expand_icon.svg") no-repeat calc(100% - 15px) center;
 }
 .text-field.--dropdown::placeholder {
   color: #575871;
@@ -329,6 +321,10 @@ a:visited, a:link, a:active {
   padding-left: 30px;
   color: #8f90a0;
   cursor: pointer;
+  user-select: none;
+}
+.radio-btn input:checked ~ .radio-btn__custom {
+  border-color: #BC9CFF;
 }
 .radio-btn input:checked ~ .radio-btn__custom::before {
   content: "";
@@ -337,11 +333,9 @@ a:visited, a:link, a:active {
   left: 0;
   right: 0;
   bottom: 0;
-  margin: auto;
-  width: 12px;
-  height: 12px;
   border-radius: 50%;
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%) no-repeat center;
+  border: 3px solid transparent;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%) padding-box;
 }
 .radio-btn input:checked ~ .radio-btn__text {
   color: #575871;
@@ -377,6 +371,7 @@ a:visited, a:link, a:active {
   cursor: pointer;
   color: #575871;
   display: inline-block;
+  user-select: none;
 }
 .toggle-btn input:checked ~ .toggle-btn__custom {
   border-color: #BC9CFF;
@@ -384,7 +379,7 @@ a:visited, a:link, a:active {
 .toggle-btn input:checked ~ .toggle-btn__custom::before {
   transition: 0.2s;
   transform: translateX(20px);
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%) no-repeat;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 }
 .toggle-btn:hover {
   opacity: 0.8;
@@ -412,7 +407,7 @@ a:visited, a:link, a:active {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: #c7c7d0 no-repeat;
+  background: #c7c7d0;
   transition: 0.2s;
 }
 
@@ -472,7 +467,7 @@ a:visited, a:link, a:active {
   grid-row: 1;
   min-width: 320px;
 }
-.ui-btns-sliders-list li {
+.ui-btns-sliders-list > li {
   margin-bottom: 40px;
 }
 .ui-btns-sliders-list .button-base {
@@ -701,9 +696,9 @@ span.ellipse.clickable {
   border-color: #8f90a0;
   border-bottom-color: transparent;
 }
-.dropdown__expand-check:checked ~ .--dropdown:after {
-  transform: translateY(-50%) rotateZ(180deg);
-  content: url("icons/expand_more_icon.svg");
+.dropdown__expand-check:checked ~ .--dropdown {
+  background-image: url("icons/expand_more.svg");
+  transition: all 0.2s ease-out;
 }
 .dropdown__expand-check:checked ~ .dropdown__exp-list {
   display: revert;
@@ -720,6 +715,8 @@ span.ellipse.clickable {
   right: 0;
   top: calc(100% - 1px);
   padding: 7px 7px 7px 15px;
+  z-index: 1;
+  margin: 0;
 }
 .dropdown__exp-list li:not(:last-child) {
   margin-bottom: 7px;
@@ -919,7 +916,7 @@ span.ellipse.clickable {
   border-radius: 50%;
   border: 2px solid white;
 }
-.comment__avatar img {
+.comment__avatar > * {
   clip-path: circle(calc(50.0% - 2px) at 50% 50%);
   transform: translateY(-2px) translateX(-2px);
 }
@@ -938,6 +935,61 @@ span.ellipse.clickable {
 .comment__text {
   margin: 0;
   grid-area: text;
+}
+
+.section-cards {
+  display: grid;
+  grid-template-areas: "find get cld" "reg get room-l" "reg enter room-l" "reg enter room" "reg . room" "reg . .";
+  grid-gap: 40px;
+  background: #E5E5E5;
+  padding: 150px 140px 140px 140px;
+}
+
+.form-card {
+  width: 380px;
+  padding: 40px 30px 30px 30px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.form-card fieldset {
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+  border: 0;
+}
+.form-card > * + * {
+  margin-top: 1.44em;
+}
+.form-card > :last-child {
+  margin-top: 2.16em;
+}
+
+.find-room-forms {
+  grid-area: find;
+}
+
+.dates-dropdowns {
+  display: flex;
+  gap: 20px;
+}
+.dates-dropdowns > * {
+  flex: 1 0 150px;
+}
+
+.reg-account-form {
+  grid-area: reg;
+}
+.reg-account-form input:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.have-acc {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -15,7 +15,7 @@ body
   font-family: Montserrat, sans-serif
   @extend %mainSizeFont
 
-  section
+  >section
     max-width: 1440px
     margin: auto
     border-bottom: 1px $DarkShade-5 solid
@@ -41,8 +41,7 @@ h3
 
 ul
   padding: 0
-
-  li
+  >li
     list-style: none
 
 a
@@ -165,6 +164,8 @@ a
       width: 150px
 
 .title-label
+  @extend %labelSizeFont
+  display: block
   margin-bottom: 5px
   &--hi
     margin-bottom: 16px
@@ -189,6 +190,7 @@ a
   white-space: nowrap
   overflow-x: hidden
   overflow-y: visible
+
   &::placeholder
     color: $DarkShade-25
   &:hover,
@@ -206,19 +208,9 @@ a
     display: inline-flex
     align-items: center
     user-select: none
-    &:after
-      position: absolute
-      content: url("icons/expand_icon.svg")
-      top: 50%
-      transform: translateY(-50%)
-      right: 15px
-      transition: all .2s ease-out
-      //bottom: 0
-      //width: 100%
-      //height: 100%
-      z-index: -1
-      background: white no-repeat calc(100% - 15px) center
-      //background-image: url("icons/expand_icon.svg")
+    background: white url("icons/expand_icon.svg") no-repeat calc(100% - 15px) center
+    @extend %mainSizeFont
+
     &::placeholder
       color: $DarkShade-75
 
@@ -289,8 +281,11 @@ a
   padding-left: 30px
   color: $DarkShade-50
   cursor: pointer
+  user-select: none
 
   input:checked
+    ~ .radio-btn__custom
+      border-color: $Purple
     ~ .radio-btn__custom::before
       content: ''
       position: absolute
@@ -298,11 +293,9 @@ a
       left: 0
       right: 0
       bottom: 0
-      margin: auto
-      width: 12px
-      height: 12px
       border-radius: 50%
-      background: $Purple-gradient no-repeat center
+      border: 3px solid transparent
+      background: $Purple-gradient padding-box
     ~ .radio-btn__text
       color: $DarkShade-75
 
@@ -336,6 +329,7 @@ a
   cursor: pointer
   color: $DarkShade-75
   display: inline-block
+  user-select: none
 
   input
     &:checked ~ .toggle-btn__custom
@@ -343,8 +337,7 @@ a
       &::before
         transition: .2s
         transform: translateX(20px)
-        background: $Purple-gradient no-repeat
-
+        background: $Purple-gradient
   &:hover
     opacity: .8
 
@@ -369,12 +362,12 @@ a
     width: 12px
     height: 12px
     border-radius: 50%
-    background: $DarkShade-25 no-repeat
+    background: $DarkShade-25
     transition: .2s
 
 
 
-//LIKE BUTTON---------
+//LIKE BUTTON--------------------------
 
 .like-btn
   position: relative
@@ -428,14 +421,13 @@ a
 
 
 
-
 //UI-SLIDERS-BTNS-LIST---------
 
 .ui-btns-sliders-list
   grid-column: 6
   grid-row: 1
   min-width: 320px
-  li
+  >li
     margin-bottom: 40px
   .button-base
     margin: 0 20px 30px 0
@@ -656,13 +648,12 @@ span.ellipse.clickable
     border-bottom-color: transparent
     @extend .--shadow
   ~ .--dropdown
-    &:after
-      transform:  translateY(-50%) rotateZ(180deg)
-      content: url("icons/expand_more_icon.svg")
+    background-image: url("icons/expand_more.svg")
+    transition: all .2s ease-out
+
   ~ .dropdown__exp-list
     @extend .--shadow
     display: revert
-
 
 .dropdown__exp-list
   background: white
@@ -675,6 +666,8 @@ span.ellipse.clickable
   right: 0
   top: calc(100% - 1px)
   padding: 7px 7px 7px 15px
+  z-index: 1
+  margin: 0
 
   li:not(:last-child)
     margin-bottom: 7px
@@ -884,7 +877,7 @@ span.ellipse.clickable
     margin-bottom: 10px
     border-radius: 50%
     border: 2px solid white
-    img
+    & > *
       clip-path: circle(calc(50.0% - 2px) at 50% 50%)
       transform: translateY(-2px) translateX(-2px)
 
@@ -903,3 +896,70 @@ span.ellipse.clickable
   &__text
     margin: 0
     grid-area: text
+
+
+
+//SECTION-CARDS-----------------------------------
+
+.section-cards
+  display: grid
+  grid-template-areas: 'find get cld''reg get room-l''reg enter room-l''reg enter room''reg . room''reg . .'
+  grid-gap: 40px
+  background: #E5E5E5
+  padding: 150px 140px 140px 140px
+
+//FORM-CARD_BASE----------------
+
+.form-card
+  width: 380px
+  padding: 40px 30px 30px 30px
+  background-color: white
+  border: 1px solid rgba(0, 0, 0, 0.12)
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2)
+  border-radius: 4px
+
+  fieldset
+    padding: 0
+    margin-left: 0
+    margin-right: 0
+    border: 0
+  & > * + *
+    margin-top: 1.44em // 10px = .72em
+  & >:last-child
+    margin-top: 2.16em
+
+
+
+.find-room-forms
+  grid-area: find
+
+.dates-dropdowns
+  display: flex
+  gap: 20px
+  & > *
+    flex: 1 0 150px
+
+
+
+//REGISTRATION-ACCOUNT------------------
+
+.reg-account-form
+  grid-area: reg
+  input:not(:last-child)
+    margin-bottom: 10px
+
+
+.have-acc
+  display: inline-flex
+  align-items: center
+  justify-content: space-between
+  width: 100%
+
+
+
+//.get-room-form
+//.enter-acc-form
+//.calendar
+//.room-card
+//.--lux
+
