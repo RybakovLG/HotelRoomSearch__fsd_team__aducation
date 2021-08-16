@@ -47,6 +47,7 @@ $('.pagination-holder').pagination({
 
 let dataDropdowns = {};
 
+
 $('.dropdown__expand-check').one('click',function () {
 
   let itemsNames = $(this).parent().find('.exp-list__name'),
@@ -56,7 +57,7 @@ $('.dropdown__expand-check').one('click',function () {
 
 
 //Проверяем считаем людей или комнаты
-  let isPeople = ($(this).parent().hasClass('--for-people')) ? true : false ;
+  let isPeople = !!($(this).parent().hasClass('--for-people')) ;
 
 
 // Заполняем dataDropdowns
@@ -156,6 +157,18 @@ $('.dropdown__expand-check').one('click',function () {
       $(mainLabel).text(`${dataDropdowns['спальни']} спальни, ${dataDropdowns['кровати']} кровати...`)
     }
   }
+
+
+  //Клик вне элемента закрывает дропдаун
+    $(document).on('click', function(e){
+    if ( $(e.target).closest('.dropdown').length ) {
+      // клик внутри элемента
+      return;
+    }
+    // клик снаружи элемента
+    $(toggleCheckbox).removeAttr('checked');
+    $(toggleCheckbox).prop('checked', false);
+  });
 });
 
 
