@@ -1,640 +1,509 @@
 <!doctype html>
 <html lang="ru" xmlns="http://www.w3.org/1999/html">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="src/fonts/fonts.css">
   <link rel="stylesheet" href="src/normalize.css">
   <link rel="stylesheet" href="src/style.css">
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
-
   <script src="src/jquery-plugins/pretty-dropdowns/dist/js/jquery.prettydropdowns.js"></script>
   <link rel="stylesheet" href="src/jquery-plugins/pretty-dropdowns/dist/css/prettydropdowns.css">
-
   <script src="node_modules/jquery-bar-rating/dist/jquery.barrating.min.js"></script>
   <link rel="stylesheet" href="src/jquery-plugins/Stars-rating/css-stars.css">
-
   <script src="src/jquery-plugins/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
   <link rel="stylesheet" href="src/jquery-plugins/ion-rangeslider/css/ion.rangeSlider.css">
-
   <script src="src/jquery-plugins/simplePagination.js-master/jquery.simplePagination.js"></script>
-
+  <link rel="stylesheet" href="src/jquery-plugins/vanillajs-datepicker/datepicker.css">
   <title>Document</title>
 </head>
-  <body>
 
+<body>
 <!--UI_KIT-->
-
 <!--  FONTS & COLORS-->
-
-    <section class="section-colors-type">
-      <ul class="colors-list">
-        <li class="colors__item">
-          <div class="colors__box --dark100-box"></div>
-          <div class="colors__desc">
-            <h2 class="colors__name">Dark Shade 100%
-              </h2>
-            <span class="colors__code">#1F2041</span></div>
-        </li>
-        <li class="colors__item">
-          <div class="colors__box --dark75-box"></div>
-          <div class="colors__desc">
-            <h2 class="colors__name">Dark Shade 75%
-              </h2>
-            <span class="colors__code">#1F2041</span></div>
-        </li>
-        <li class="colors__item">
-          <div class="colors__box --dark50-box"></div>
-          <div class="colors__desc">
-            <h2 class="colors__name">Dark Shade 50%
-              </h2>
-            <span class="colors__code">#1F2041</span></div>
-        </li>
-        <li class="colors__item">
-          <div class="colors__box --dark25-box"></div>
-          <div class="colors__desc">
-            <h2 class="colors__name">Dark Shade 25%
-              </h2>
-            <span class="colors__code">#1F2041</span></div>
-        </li>
-        <li class="colors__item">
-          <div class="colors__box --dark5-box"></div>
-          <div class="colors__desc">
-            <h2 class="colors__name">Dark Shade 5%
-              </h2>
-            <span class="colors__code">#1F2041</span></div>
-        </li>
-        <li class="colors__item">
-          <div class="colors__box --purple-box"></div>
-          <div class="colors__desc">
-            <h2 class="colors__name">Purple
-              </h2>
-            <span class="colors__code">#BC9CFF</span></div>
-        </li>
-        <li class="colors__item">
-          <div class="colors__box --green-box"></div>
-          <div class="colors__desc">
-            <h2 class="colors__name">Green
-              </h2>
-            <span class="colors__code">#6FCF97</span></div>
-        </li>
-      </ul>
-      <ul class="fonts-list">
-        <li class="fonts__item --sizeLikeH1">
-          <span class="font__use">H1</span>
-          <span class="font__desc">This one is the sub-section or
-            widget title</span>
-        </li>
-        <li class="fonts__item --sizeLikeH2">
-          <span class="font__use">H2</span>
-          <span class="font__desc">Next one is the item title inside
-            widgets</span>
-        </li>
-        <li class="fonts__item --sizeLikeH3">
-          <span class="font__use">H3</span>
-          <span class="font__desc">This is a label or CTA text</span>
-        </li>
-        <li class="fonts__item">
-          <span class="font__use">Body</span>
-          <span class="font__desc">This is the body text which is used for most
-            of the design, like paragraphs, lists, etc.</span>
-        </li>
-      </ul>
-    </section>
-
+<section class="section-colors-type">
+  <ul class="colors-list">
+    <li class="colors__item">
+      <div class="colors__box --dark100-box"></div>
+      <div class="colors__desc">
+        <h2 class="colors__name">Dark Shade 100%
+        </h2> <span class="colors__code">#1F2041</span> </div>
+    </li>
+    <li class="colors__item">
+      <div class="colors__box --dark75-box"></div>
+      <div class="colors__desc">
+        <h2 class="colors__name">Dark Shade 75%
+        </h2> <span class="colors__code">#1F2041</span> </div>
+    </li>
+    <li class="colors__item">
+      <div class="colors__box --dark50-box"></div>
+      <div class="colors__desc">
+        <h2 class="colors__name">Dark Shade 50%
+        </h2> <span class="colors__code">#1F2041</span> </div>
+    </li>
+    <li class="colors__item">
+      <div class="colors__box --dark25-box"></div>
+      <div class="colors__desc">
+        <h2 class="colors__name">Dark Shade 25%
+        </h2> <span class="colors__code">#1F2041</span> </div>
+    </li>
+    <li class="colors__item">
+      <div class="colors__box --dark5-box"></div>
+      <div class="colors__desc">
+        <h2 class="colors__name">Dark Shade 5%
+        </h2> <span class="colors__code">#1F2041</span> </div>
+    </li>
+    <li class="colors__item">
+      <div class="colors__box --purple-box"></div>
+      <div class="colors__desc">
+        <h2 class="colors__name">Purple
+        </h2> <span class="colors__code">#BC9CFF</span> </div>
+    </li>
+    <li class="colors__item">
+      <div class="colors__box --green-box"></div>
+      <div class="colors__desc">
+        <h2 class="colors__name">Green
+        </h2> <span class="colors__code">#6FCF97</span> </div>
+    </li>
+  </ul>
+  <ul class="fonts-list">
+    <li class="fonts__item --sizeLikeH1"> <span class="font__use">H1</span> <span class="font__desc">This one is the sub-section or
+            widget title</span> </li>
+    <li class="fonts__item --sizeLikeH2"> <span class="font__use">H2</span> <span class="font__desc">Next one is the item title inside
+            widgets</span> </li>
+    <li class="fonts__item --sizeLikeH3"> <span class="font__use">H3</span> <span class="font__desc">This is a label or CTA text</span> </li>
+    <li class="fonts__item"> <span class="font__use">Body</span> <span class="font__desc">This is the body text which is used for most
+            of the design, like paragraphs, lists, etc.</span> </li>
+  </ul>
+</section>
 <!--FORM ELEMENTS-->
-
-  <section class="section-form-elements">
-    <ul class="ui-fields-list">
-      <li>
-        <label class="title-label">Text Field</label>
-        <span class="label-state --sizeLikeH3">Default</span>
-        <input class="text-field" type="text" placeholder="Email">
-      </li>
-      <li>
-        <h3 class="title-label">Text Field</h3>
-        <span class="label-state --sizeLikeH3">Hover / Focus</span>
-        <input class="text-field --onFocus" type="text" placeholder="This is pretty awesome">
-      </li>
-      <li>
-        <h3 class="title-label">Dropdown</h3>
-        <label class="text-field --dropdown">Сколько гостей</label>
-      </li>
-      <li>
-        <h3 class="title-label">masked text field</h3>
-        <input class="text-field" type="text" placeholder="ДД.ММ.ГГГГ">
-      </li>
-      <li>
-        <h3 class="title-label">Dropdown</h3>
-        <label class="text-field --dropdown">ДД.ММ.ГГГГ</label>
-        <h3 class="title-label">Dropdown</h3>
-        <label class="text-field --dropdown">19.08.2019</label>
-      </li>
-      <li>
-        <h3 class="title-label">filter date dropdown</h3>
-        <label class="text-field --dropdown">19 авг - 23 авг</label>
-      </li>
-      <li>
-        <h3 class="title-label">subscription text field</h3>
-        <input class="text-field --subscription" type="text" placeholder="Email">
-      </li>
-    </ul>
-    <ul class="ui-checkboxes-list">
-      <li>
-        <h3 class="title-label--hi">Checkbox Buttons</h3>
-        <ul class="check-box-list">
-          <li class="check-box-list__item">
-            <label class="check-box">Можно курить
-              <input class="visually-hidden" type="checkbox">
-              <span class="check-box__custom"></span>
-            </label>
-          </li>
-          <li class="check-box-list__item">
-            <label class="check-box">Можно с питомцами
-              <input class="visually-hidden" type="checkbox" checked>
-              <span class="check-box__custom"></span>
-            </label>
-          </li>
-          <li class="check-box-list__item">
-            <label class="check-box">Можно пригласить гостей <br> (до 10 человек)
-              <input class="visually-hidden" type="checkbox" checked>
-              <span class="check-box__custom"></span>
-            </label>
-          </li>
-        </ul>
-      <li>
-        <h3 class="title-label--hi">Radio Buttons</h3>
-          <label class="radio-btn">
-            <input checked class="visually-hidden" name="gender" type="radio">
-            <span class="radio-btn__custom"></span>
-            <span class="radio-btn__text">Мужчина</span>
-          </label>
-          <label class="radio-btn">
-            <input class="visually-hidden" name="gender" type="radio">
-            <span class="radio-btn__custom"></span>
-            <span class="radio-btn__text">Женщина</span>
-          </label>
-      </li>
-      <li>
-        <h3 class="title-label--hi">Toggle</h3>
-        <label class="toggle-btn">
-          <input class="visually-hidden" checked type="checkbox">
-          <span class="toggle-btn__custom"></span>
-          Получать спецпредложения
-        </label>
-        <label class="toggle-btn">
-          <input class="visually-hidden" type="checkbox">
-          <span class="toggle-btn__custom"></span>
-          Получать спецпредложения
-        </label>
-      </li>
-      <li>
-        <h3 class="title-label--hi">like button</h3>
-        <label class="like-btn">
-          <input class="visually-hidden" type="checkbox">
-          <span class="like-btn__sum">2</span>
-        </label>
-        <label class="like-btn">
-          <input checked class="visually-hidden" type="checkbox">
-          <span class="like-btn__sum">12</span>
-        </label>
-      </li>
-      <li>
-         <h3 class="title-label--hi">rate button</h3>
-        <div class="stars-rating">
-          <select class="stars-rating__select">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option selected value="4">4</option>
-            <option value="5">5</option>
-          </select>
-        </div>
-        <div class="stars-rating">
-          <select class="stars-rating__select">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option selected value="5">5</option>
-          </select>
-        </div>
-      </li>
-    </ul>
-    <ul class="ui-btns-sliders-list">
-      <li>
-        <div class="range-slider">
-          <h3 class="title-label--hi">Range Slider</h3>
-          <span class="js-range-slider__info">123</span>
-          <input type="text" class="js-range-slider" name="my_range" value=""/>
-        </div>
-      </li>
-      <li>
-        <h3 class="title-label--hi">buttons</h3>
-        <button class="button-base">CLICK ME</button>
-        <button class="button-base --hover">CLICK ME</button>
-        <button class="button-base --empty">CLICK ME</button>
-        <button class="button-base --empty --hover">CLICK ME</button>
-        <br>
-        <button class="button-base --mini">CLICK ME</button>
-        <button class="button-base --mini --hover">CLICK ME</button>
-        <button class="button-base --finish">перейти к оплате</button>
-      </li>
-      <li>
-        <h3 class="title-label--hi">pagination</h3>
-        <div class="pagination-holder"></div>
-
-      </li>
-    </ul>
-    <ul class="ui-dropdowns-list">
-      <li>
-        <h3 class="title-label">dropdown</h3>
-        <span class="label-state --sizeLikeH3">Default</span>
-        <label class="text-field --dropdown">2 спальни, 2 кровати...</label>
-      </li>
-      <li>
-        <h3 class="title-label">dropdown</h3>
-        <span class="label-state --sizeLikeH3">expanded</span>
-        <div class="dropdown">
-          <input id="dropD-for-rooms" class="dropdown__expand-check visually-hidden" type="checkbox">
-          <label for="dropD-for-rooms" class="text-field --dropdown">2 спальни, 2 кровати...</label>
-          <ul class="dropdown__exp-list --shadow">
-            <li class="exp-list__item" >
-              <span class="exp-list__name">спальни</span>
-              <div class="exp-list__count">
-                <button class="count__btn-minus">-</button>
-                <input type="text" readonly value="2" class="count__input">
-                <button  class="count__btn-plus">+</button>
-              </div>
-            </li>
-            <li class="exp-list__item" >
-              <span class="exp-list__name">кровати</span>
-              <div class="exp-list__count">
-                <button class="count__btn-minus">-</button>
-                <input type="text" readonly value="2" class="count__input">
-                <button  class="count__btn-plus">+</button>
-              </div>
-            </li>
-            <li class="exp-list__item" >
-              <span class="exp-list__name">ванные комнаты</span>
-              <div class="exp-list__count">
-                <button disabled class="count__btn-minus">-</button>
-                <input type="text" readonly value="0" class="count__input">
-                <button  class="count__btn-plus">+</button>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <h3 class="title-label">dropdown</h3>
-        <fieldset class="dropdown --for-people">
-          <input id="dropD-for-peoples" class="dropdown__expand-check visually-hidden" type="checkbox">
-          <label for="dropD-for-peoples" class="text-field --dropdown">Сколько гостей</label>
-          <ul class="dropdown__exp-list --shadow">
-            <li class="exp-list__item" >
-              <span class="exp-list__name">взрослые</span>
-              <div class="exp-list__count">
-                <button type="button" disabled class="count__btn-minus">-</button>
-                <input type="text" readonly value="0" class="count__input">
-                <button type="button"  class="count__btn-plus">+</button>
-              </div>
-            </li>
-            <li class="exp-list__item" >
-              <span class="exp-list__name">дети</span>
-              <div class="exp-list__count">
-                <button type="button" disabled class="count__btn-minus">-</button>
-                <input type="text" readonly value="0" class="count__input">
-                <button type="button"  class="count__btn-plus">+</button>
-              </div>
-            </li>
-            <li class="exp-list__item" >
-              <span class="exp-list__name">младенцы</span>
-              <div class="exp-list__count">
-                <button type="button" disabled class="count__btn-minus">-</button>
-                <input type="text" readonly value="0" class="count__input">
-                <button type="button" class="count__btn-plus">+</button>
-              </div>
-            </li>
-            <li class="exp-list__buttons">
-              <button type="reset" class="button-base --mini visibility-hidden">очистить</button>
-              <button type="submit" class="button-base --mini">применить</button>
-            </li>
-          </ul>
-        </fieldset>
-      </li>
-      <li>
-        <h3 class="title-label">dropdown</h3>
-        <form class="dropdown --for-people">
-          <input id="dropD-for-peoples_2" class="dropdown__expand-check visually-hidden" type="checkbox">
-          <label for="dropD-for-peoples_2" class="text-field --dropdown">3 гостя</label>
-          <ul class="dropdown__exp-list --shadow">
-            <li class="exp-list__item" >
-              <span class="exp-list__name">взрослые</span>
-              <div class="exp-list__count">
-                <button type="button" class="count__btn-minus">-</button>
-                <input type="text" readonly value="2" class="count__input">
-                <button type="button"  class="count__btn-plus">+</button>
-              </div>
-            </li>
-            <li class="exp-list__item" >
-              <span class="exp-list__name">дети</span>
-              <div class="exp-list__count">
-                <button type="button" class="count__btn-minus">-</button>
-                <input type="text" readonly value="1" class="count__input">
-                <button type="button"  class="count__btn-plus">+</button>
-              </div>
-            </li>
-            <li class="exp-list__item" >
-              <span class="exp-list__name">младенцы</span>
-              <div class="exp-list__count">
-                <button type="button" disabled class="count__btn-minus">-</button>
-                <input type="text" readonly value="0" class="count__input">
-                <button type="button" class="count__btn-plus">+</button>
-              </div>
-            </li>
-            <li class="exp-list__buttons">
-              <button type="reset" class="button-base --mini">очистить</button>
-              <button type="submit" class="button-base --mini">применить</button>
-            </li>
-          </ul>
-        </form>
-      </li>
-    </ul>
-    <ul class="ui-expandable-list">
-      <li>
-        <details  class="expandable-list">
-          <summary class="text-field --dropdown --check-list">expandable checkbox list</summary>
-        </details>
-      </li>
-      <li>
-        <details  open class="expandable-list">
-          <summary class="text-field --dropdown --check-list">expandable checkbox list</summary>
-          <ul class="check-box-list">
-            <li class="check-box-list__item">
-              <label class="check-box">Завтрак
-                <input class="visually-hidden" type="checkbox">
-                <span class="check-box__custom"></span>
-              </label>
-            </li>
-            <li class="check-box-list__item">
-              <label class="check-box">Письменный стол
-                <input class="visually-hidden" checked type="checkbox">
-                <span class="check-box__custom"></span>
-              </label>
-            </li>
-            <li class="check-box-list__item">
-              <label class="check-box">Стул для кормления
-                <input class="visually-hidden" checked type="checkbox">
-                <span class="check-box__custom"></span>
-              </label>
-            </li>
-            <li class="check-box-list__item">
-              <label class="check-box">Кроватка
-                <input class="visually-hidden" checked type="checkbox">
-                <span class="check-box__custom"></span>
-              </label>
-            </li>
-            <li class="check-box-list__item">
-              <label class="check-box">Телевизор
-                <input class="visually-hidden" type="checkbox">
-                <span class="check-box__custom"></span>
-              </label>
-            </li>
-            <li class="check-box-list__item">
-              <label class="check-box">Шампунь
-                <input class="visually-hidden" type="checkbox">
-                <span class="check-box__custom"></span>
-              </label>
-            </li>
-          </ul>
-
-
-        </details>
-
-      </li>
-    </ul>
-    <ul class="ui-rich-checkboxes-list">
-      <li>
-        <h3 class="title-label--hi">rich Checkbox Buttons</h3>
-        <ul class="check-box-list">
-          <li class="check-box-list__item">
-            <label class="check-box --rich">Широкий коридор
-              <input class="visually-hidden" type="checkbox">
-              <span class="check-box__custom"></span>
-              <p class="check-box__desc">Ширина коридоров в номере не менее 91 см.</p>
-            </label>
-          </li>
-          <li class="check-box-list__item">
-            <label class="check-box --rich">Помощник для инвалидов
-              <input class="visually-hidden" type="checkbox">
-              <span class="check-box__custom"></span>
-              <p class="check-box__desc">На 1 этаже вас встретит специалист  и проводит до номера.</p>
-            </label>
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <ul class="ui-bullets-list">
-      <li>
-        <h3 class="title-label--hi">bullet list</h3>
-        <ul class="bullet-list">
-          <li class="bullet-list__item">Нельзя с питомцами</li>
-          <li class="bullet-list__item">Без вечеринок и мероприятий</li>
-          <li class="bullet-list__item">Время прибытия — после 13:00,
-            а выезд до 12:00</li>
-        </ul>
-      </li>
-    </ul>
-    <ul class="ui-bonuses-list">
-      <ul class="bonuses-list">
-        <li class="bonuses-item">
-          <object class="bonuses-item__icon" type="image/svg+xml" data="src/icons/insert_emoticon.svg"></object>
-          <span class="bonuses-item__title">Комфорт</span>
-          <span class="bonuses-item__desc">Шумопоглощающие стены</span>
+<section class="section-form-elements">
+  <ul class="ui-fields-list">
+    <li>
+      <label class="title-label">Text Field</label> <span class="label-state --sizeLikeH3">Default</span>
+      <input class="text-field" type="text" placeholder="Email"> </li>
+    <li>
+      <h3 class="title-label">Text Field</h3> <span class="label-state --sizeLikeH3">Hover / Focus</span>
+      <input class="text-field --onFocus" type="text" placeholder="This is pretty awesome"> </li>
+    <li>
+      <h3 class="title-label">Dropdown</h3>
+      <label class="text-field --dropdown">Сколько гостей</label>
+    </li>
+    <li>
+      <h3 class="title-label">masked text field</h3>
+      <input class="text-field" type="text" placeholder="ДД.ММ.ГГГГ"> </li>
+    <li>
+      <h3 class="title-label">Dropdown</h3>
+      <label class="text-field --dropdown">ДД.ММ.ГГГГ</label>
+      <h3 class="title-label">Dropdown</h3>
+      <label class="text-field --dropdown">19.08.2019</label>
+    </li>
+    <li>
+      <h3 class="title-label">filter date dropdown</h3>
+      <label class="text-field --dropdown">19 авг - 23 авг</label>
+    </li>
+    <li>
+      <h3 class="title-label">subscription text field</h3>
+      <input class="text-field --subscription" type="text" placeholder="Email"> </li>
+  </ul>
+  <ul class="ui-checkboxes-list">
+    <li>
+      <h3 class="title-label--hi">Checkbox Buttons</h3>
+      <ul class="check-box-list">
+        <li class="check-box-list__item">
+          <label class="check-box">Можно курить
+            <input class="visually-hidden" type="checkbox"> <span class="check-box__custom"></span> </label>
         </li>
-        <li class="bonuses-item">
-          <object class="bonuses-item__icon" type="image/svg+xml" data="src/icons/location_city.svg"></object>
-          <span class="bonuses-item__title">Удобство</span>
-          <span class="bonuses-item__desc">Окно в каждой из спален</span>
+        <li class="check-box-list__item">
+          <label class="check-box">Можно с питомцами
+            <input class="visually-hidden" type="checkbox" checked> <span class="check-box__custom"></span> </label>
+        </li>
+        <li class="check-box-list__item">
+          <label class="check-box">Можно пригласить гостей
+            <br> (до 10 человек)
+            <input class="visually-hidden" type="checkbox" checked> <span class="check-box__custom"></span> </label>
         </li>
       </ul>
-    </ul>
-    <ul class="ui-comments-list">
-      <div class="comment">
-        <div class="comment__avatar">
-          <img width="48px" src="src/icons/p_sarafanov_48.png" alt="sarafanov">
-        </div>
-        <span class="comment__who">Мурад Сарафанов</span>
-        <span class="comment__date">5 дней назад</span>
-        <label class="like-btn comment__likes">
-          <input checked class="visually-hidden" type="checkbox">
-          <span class="like-btn__sum">12</span>
-        </label>
-        <p class="comment__text">Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.</p>
-      </div>
-    </ul>
-  </section>
-
-<!--CARDS-->
-
-<section class="section-cards">
-  
-  <form class="find-room-forms form-card" action="#">
-
-    <h1>Найдём номера под ваши пожелания</h1>
-
-    <fieldset class="dates-dropdowns">
-
-      <div>
-        <label class="title-label">прибытие</label>
-        <label class="text-field --dropdown">ДД.ММ.ГГГГ
-          <input class="visually-hidden" type="date">
-        </label>
-      </div>
-
-    <div>
-      <label class="title-label">выезд</label>
-      <label class="text-field --dropdown">ДД.ММ.ГГГГ
-        <input class="visually-hidden" type="date">
-      </label>
-    </div>
-
-    </fieldset>
-
-    <section class="dropdown --for-people">
-      <label class="title-label">гости</label>
-      <input id="ui-dropD-for-peoples-1" class="dropdown__expand-check visually-hidden" type="checkbox">
-      <label for="ui-dropD-for-peoples-1" class="text-field --dropdown">Сколько гостей</label>
-      <ul class="dropdown__exp-list --shadow">
-        <li class="exp-list__item" >
-          <span class="exp-list__name">взрослые</span>
-          <div class="exp-list__count">
-            <button type="button" disabled class="count__btn-minus">-</button>
-            <input type="text" readonly value="0" class="count__input">
-            <button type="button"  class="count__btn-plus">+</button>
-          </div>
-        </li>
-        <li class="exp-list__item" >
-          <span class="exp-list__name">дети</span>
-          <div class="exp-list__count">
-            <button type="button" disabled class="count__btn-minus">-</button>
-            <input type="text" readonly value="0" class="count__input">
-            <button type="button"  class="count__btn-plus">+</button>
-          </div>
-        </li>
-        <li class="exp-list__item" >
-          <span class="exp-list__name">младенцы</span>
-          <div class="exp-list__count">
-            <button type="button" disabled class="count__btn-minus">-</button>
-            <input type="text" readonly value="0" class="count__input">
-            <button type="button" class="count__btn-plus">+</button>
-          </div>
-        </li>
-        <li class="exp-list__buttons">
-          <button type="reset" class="button-base --mini visibility-hidden">очистить</button>
-          <button type="submit" class="button-base --mini">применить</button>
-        </li>
-      </ul>
-    </section>
-
-    <button class="button-base --finish">подобрать номер</button>
-
-  </form>
-  
-  <form class="reg-account-form form-card" action="">
-    <h1>Регистрация аккаунта</h1>
-
-    <fieldset>
-      <input type="text" class="text-field" placeholder="Имя">
-      <input type="text" class="text-field" placeholder="Фамилия">
+    <li>
+      <h3 class="title-label--hi">Radio Buttons</h3>
       <label class="radio-btn">
         <input checked class="visually-hidden" name="gender" type="radio">
         <span class="radio-btn__custom"></span>
         <span class="radio-btn__text">Мужчина</span>
       </label>
       <label class="radio-btn">
-        <input  class="visually-hidden" name="gender" type="radio">
+        <input class="visually-hidden" name="gender" type="radio">
         <span class="radio-btn__custom"></span>
         <span class="radio-btn__text">Женщина</span>
       </label>
+    </li>
+    <li>
+      <h3 class="title-label--hi">Toggle</h3>
+      <label class="toggle-btn">
+        <input class="visually-hidden" checked type="checkbox">
+        <span class="toggle-btn__custom"></span>
+        Получать спецпредложения
+      </label>
+      <label class="toggle-btn">
+        <input class="visually-hidden" type="checkbox"> <span class="toggle-btn__custom"></span> Получать спецпредложения </label>
+    </li>
+    <li>
+      <h3 class="title-label--hi">like button</h3>
+      <label class="like-btn">
+        <input class="visually-hidden" type="checkbox">
+        <span class="like-btn__sum">2</span>
+      </label>
+      <label class="like-btn">
+        <input checked class="visually-hidden" type="checkbox">
+        <span class="like-btn__sum">12</span>
+      </label>
+    </li>
+    <li>
+      <h3 class="title-label--hi">rate button</h3>
+      <div class="stars-rating">
+        <select class="stars-rating__select">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option selected value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div class="stars-rating">
+        <select class="stars-rating__select">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option selected value="5">5</option>
+        </select>
+      </div>
+    </li>
+  </ul>
+  <ul class="ui-btns-sliders-list">
+    <li>
+      <div class="range-slider">
+        <h3 class="title-label--hi">Range Slider</h3> <span class="js-range-slider__info">123</span>
+        <input type="text" class="js-range-slider" name="my_range" value="" /> </div>
+    </li>
+    <li>
+      <h3 class="title-label--hi">buttons</h3>
+      <button class="button-base">CLICK ME</button>
+      <button class="button-base --hover">CLICK ME</button>
+      <button class="button-base --empty">CLICK ME</button>
+      <button class="button-base --empty --hover">CLICK ME</button>
+      <br>
+      <button class="button-base --mini">CLICK ME</button>
+      <button class="button-base --mini --hover">CLICK ME</button>
+      <button class="button-base --finish">перейти к оплате</button>
+    </li>
+    <li>
+      <h3 class="title-label--hi">pagination</h3>
+      <div class="pagination-holder"></div>
+    </li>
+  </ul>
+  <ul class="ui-dropdowns-list">
+    <li>
+      <h3 class="title-label">dropdown</h3> <span class="label-state --sizeLikeH3">Default</span>
+      <label class="text-field --dropdown">2 спальни, 2 кровати...</label>
+    </li>
+    <li>
+      <span class="label-state --sizeLikeH3">expanded</span>
+      <fieldset class="dropdown">
+        <legend class="title-label">dropdown</legend>
+        <input id="dropD-for-rooms" class="dropdown__expand-check visually-hidden" type="checkbox">
+        <label for="dropD-for-rooms" class="text-field --dropdown">2 спальни, 2 кровати...
+        </label>
+        <ul class="dropdown__exp-list --shadow">
+          <li class="exp-list__item"> <span class="exp-list__name">спальни</span>
+            <div class="exp-list__count">
+              <button class="count__btn-minus">-</button>
+              <input type="text" readonly value="2" class="count__input">
+              <button class="count__btn-plus">+</button>
+            </div>
+          </li>
+          <li class="exp-list__item"> <span class="exp-list__name">кровати</span>
+            <div class="exp-list__count">
+              <button class="count__btn-minus">-</button>
+              <input type="text" readonly value="2" class="count__input">
+              <button class="count__btn-plus">+</button>
+            </div>
+          </li>
+          <li class="exp-list__item"> <span class="exp-list__name">ванные комнаты</span>
+            <div class="exp-list__count">
+              <button disabled class="count__btn-minus">-</button>
+              <input type="text" readonly value="0" class="count__input">
+              <button class="count__btn-plus">+</button>
+            </div>
+          </li>
+        </ul>
+      </fieldset>
+    </li>
+    <li>
+      <fieldset class="dropdown --for-people">
+        <legend class="title-label">dropdown</legend>
+        <input id="dropD-for-peoples" class="dropdown__expand-check visually-hidden" type="checkbox">
+        <label for="dropD-for-peoples" class="text-field --dropdown">Сколько гостей</label>
+        <ul class="dropdown__exp-list --shadow">
+          <li class="exp-list__item"> <span class="exp-list__name">взрослые</span>
+            <div class="exp-list__count">
+              <button type="button" disabled class="count__btn-minus">-</button>
+              <input type="text" readonly value="0" class="count__input">
+              <button type="button" class="count__btn-plus">+</button>
+            </div>
+          </li>
+          <li class="exp-list__item"> <span class="exp-list__name">дети</span>
+            <div class="exp-list__count">
+              <button type="button" disabled class="count__btn-minus">-</button>
+              <input type="text" readonly value="0" class="count__input">
+              <button type="button" class="count__btn-plus">+</button>
+            </div>
+          </li>
+          <li class="exp-list__item"> <span class="exp-list__name">младенцы</span>
+            <div class="exp-list__count">
+              <button type="button" disabled class="count__btn-minus">-</button>
+              <input type="text" readonly value="0" class="count__input">
+              <button type="button" class="count__btn-plus">+</button>
+            </div>
+          </li>
+          <li class="exp-list__buttons">
+            <button type="reset" class="button-base --mini visibility-hidden">очистить</button>
+            <button type="submit" class="button-base --mini">применить</button>
+          </li>
+        </ul>
+      </fieldset>
+    </li>
+    <li>
+      <fieldset class="dropdown --for-people">
+        <legend class="title-label">dropdown</legend>
+        <input id="dropD-for-peoples_2" class="dropdown__expand-check visually-hidden" type="checkbox">
+        <label for="dropD-for-peoples_2" class="text-field --dropdown">3 гостя</label>
+        <ul class="dropdown__exp-list --shadow">
+          <li class="exp-list__item"> <span class="exp-list__name">взрослые</span>
+            <div class="exp-list__count">
+              <button type="button" class="count__btn-minus">-</button>
+              <input type="text" readonly value="2" class="count__input">
+              <button type="button" class="count__btn-plus">+</button>
+            </div>
+          </li>
+          <li class="exp-list__item"> <span class="exp-list__name">дети</span>
+            <div class="exp-list__count">
+              <button type="button" class="count__btn-minus">-</button>
+              <input type="text" readonly value="1" class="count__input">
+              <button type="button" class="count__btn-plus">+</button>
+            </div>
+          </li>
+          <li class="exp-list__item"> <span class="exp-list__name">младенцы</span>
+            <div class="exp-list__count">
+              <button type="button" disabled class="count__btn-minus">-</button>
+              <input type="text" readonly value="0" class="count__input">
+              <button type="button" class="count__btn-plus">+</button>
+            </div>
+          </li>
+          <li class="exp-list__buttons">
+            <button type="reset" class="button-base --mini">очистить</button>
+            <button type="submit" class="button-base --mini">применить</button>
+          </li>
+        </ul>
+      </fieldset>
+    </li>
+  </ul>
+  <ul class="ui-expandable-list">
+    <li>
+      <details class="expandable-list">
+        <summary class="text-field --dropdown --check-list">expandable checkbox list</summary>
+      </details>
+    </li>
+    <li>
+      <details open class="expandable-list">
+        <summary class="text-field --dropdown --check-list">expandable checkbox list</summary>
+        <ul class="check-box-list">
+          <li class="check-box-list__item">
+            <label class="check-box">Завтрак
+              <input class="visually-hidden" type="checkbox">
+              <span class="check-box__custom"></span>
+            </label>
+          </li>
+          <li class="check-box-list__item">
+            <label class="check-box">Письменный стол
+              <input class="visually-hidden" checked type="checkbox"> <span class="check-box__custom"></span> </label>
+          </li>
+          <li class="check-box-list__item">
+            <label class="check-box">Стул для кормления
+              <input class="visually-hidden" checked type="checkbox"> <span class="check-box__custom"></span> </label>
+          </li>
+          <li class="check-box-list__item">
+            <label class="check-box">Кроватка
+              <input class="visually-hidden" checked type="checkbox"> <span class="check-box__custom"></span> </label>
+          </li>
+          <li class="check-box-list__item">
+            <label class="check-box">Телевизор
+              <input class="visually-hidden" type="checkbox"> <span class="check-box__custom"></span> </label>
+          </li>
+          <li class="check-box-list__item">
+            <label class="check-box">Шампунь
+              <input class="visually-hidden" type="checkbox"> <span class="check-box__custom"></span> </label>
+          </li>
+        </ul>
+      </details>
+    </li>
+  </ul>
+  <ul class="ui-rich-checkboxes-list">
+    <li>
+      <h3 class="title-label--hi">rich Checkbox Buttons</h3>
+      <ul class="check-box-list">
+        <li class="check-box-list__item">
+          <label class="check-box --rich">Широкий коридор
+            <input class="visually-hidden" type="checkbox"> <span class="check-box__custom"></span>
+            <p class="check-box__desc">Ширина коридоров в номере не менее 91 см.</p>
+          </label>
+        </li>
+        <li class="check-box-list__item">
+          <label class="check-box --rich">Помощник для инвалидов
+            <input class="visually-hidden" type="checkbox"> <span class="check-box__custom"></span>
+            <p class="check-box__desc">На 1 этаже вас встретит специалист и проводит до номера.</p>
+          </label>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <ul class="ui-bullets-list">
+    <li>
+      <h3 class="title-label--hi">bullet list</h3>
+      <ul class="bullet-list">
+        <li class="bullet-list__item">Нельзя с питомцами</li>
+        <li class="bullet-list__item">Без вечеринок и мероприятий</li>
+        <li class="bullet-list__item">Время прибытия — после 13:00, а выезд до 12:00</li>
+      </ul>
+    </li>
+  </ul>
+  <ul class="ui-bonuses-list">
+    <li>
+      <ul class="bonuses-list">
+        <li class="bonuses-item">
+          <object class="bonuses-item__icon" type="image/svg+xml" data="src/icons/insert_emoticon.svg"></object> <span class="bonuses-item__title">Комфорт</span> <span class="bonuses-item__desc">Шумопоглощающие стены</span> </li>
+        <li class="bonuses-item">
+          <object class="bonuses-item__icon" type="image/svg+xml" data="src/icons/location_city.svg"></object> <span class="bonuses-item__title">Удобство</span> <span class="bonuses-item__desc">Окно в каждой из спален</span> </li>
+      </ul>
+    </li>
+  </ul>
+  <ul class="ui-comments-list">
+    <div class="comment">
+      <div class="comment__avatar"> <img width="48px" src="src/icons/p_sarafanov_48.png" alt="sarafanov"> </div> <span class="comment__who">Мурад Сарафанов</span> <span class="comment__date">5 дней назад</span>
+      <label class="like-btn comment__likes">
+        <input checked class="visually-hidden" type="checkbox"> <span class="like-btn__sum">12</span> </label>
+      <p class="comment__text">Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.</p>
+    </div>
+  </ul>
+</section>
+<!--CARDS-->
+<section class="section-cards">
+  <form class="find-room-forms form-card" action="#">
+    <h1>Найдём номера под ваши пожелания</h1>
+    <fieldset class="dates-dropdowns">
+      <div class="range-datepicker">
+        <label class="title-label">прибытие
+          <input placeholder="ДД.ММ.ГГГГ" type="text" name="start" class="text-field --dropdown datepicker-input">
+        </label>
+        <label class="title-label">ВЫЕЗД
+          <input placeholder="ДД.ММ.ГГГГ" type="text" name="end" class="text-field --dropdown datepicker-input">
+        </label>
+      </div>
     </fieldset>
-
+    <section class="dropdown --for-people">
+      <label class="title-label">гости</label>
+      <input id="ui-dropD-for-peoples-1" class="dropdown__expand-check visually-hidden" type="checkbox">
+      <label for="ui-dropD-for-peoples-1" class="text-field --dropdown">Сколько гостей</label>
+      <ul class="dropdown__exp-list --shadow">
+        <li class="exp-list__item"> <span class="exp-list__name">взрослые</span>
+          <div class="exp-list__count">
+            <button type="button" disabled class="count__btn-minus">-</button>
+            <input type="text" readonly value="0" class="count__input">
+            <button type="button" class="count__btn-plus">+</button>
+          </div>
+        </li>
+        <li class="exp-list__item"> <span class="exp-list__name">дети</span>
+          <div class="exp-list__count">
+            <button type="button" disabled class="count__btn-minus">-</button>
+            <input type="text" readonly value="0" class="count__input">
+            <button type="button" class="count__btn-plus">+</button>
+          </div>
+        </li>
+        <li class="exp-list__item"> <span class="exp-list__name">младенцы</span>
+          <div class="exp-list__count">
+            <button type="button" disabled class="count__btn-minus">-</button>
+            <input type="text" readonly value="0" class="count__input">
+            <button type="button" class="count__btn-plus">+</button>
+          </div>
+        </li>
+        <li class="exp-list__buttons">
+          <button type="reset" class="button-base --mini visibility-hidden">очистить</button>
+          <button type="submit" class="button-base --mini">применить</button>
+        </li>
+      </ul>
+    </section>
+    <button class="button-base --finish">подобрать номер</button>
+  </form>
+  <form class="reg-account-form form-card" action="">
+    <h1>Регистрация аккаунта</h1>
+    <fieldset>
+      <input type="text" class="text-field" placeholder="Имя">
+      <input type="text" class="text-field" placeholder="Фамилия">
+      <label class="radio-btn">
+        <input checked class="visually-hidden" name="gender" type="radio"> <span class="radio-btn__custom"></span> <span class="radio-btn__text">Мужчина</span> </label>
+      <label class="radio-btn">
+        <input class="visually-hidden" name="gender" type="radio"> <span class="radio-btn__custom"></span> <span class="radio-btn__text">Женщина</span> </label>
+    </fieldset>
     <section>
       <label class="title-label">дата рождения</label>
-      <input type="text"  class="text-field" placeholder="ДД.ММ.ГГГГ" pattern="^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]|(?:Jan|Mar|May|Jul|Aug|Oct|Dec)))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2]|(?:Jan|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec))\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)(?:0?2|(?:Feb))\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9]|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep))|(?:1[0-2]|(?:Oct|Nov|Dec)))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$">
-    </section>
-
+      <input type="text" class="text-field" placeholder="ДД.ММ.ГГГГ" pattern="^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]|(?:Jan|Mar|May|Jul|Aug|Oct|Dec)))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2]|(?:Jan|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec))\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)(?:0?2|(?:Feb))\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9]|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep))|(?:1[0-2]|(?:Oct|Nov|Dec)))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$"> </section>
     <fieldset>
       <legend class="title-label">данные для входа в сервис</legend>
       <input type="email" class="text-field" placeholder="Email">
       <input type="password" class="text-field" placeholder="Пароль">
       <label class="toggle-btn">
-        <input class="visually-hidden" checked="" type="checkbox">
-        <span class="toggle-btn__custom"></span>
-        Получать спецпредложения
-      </label>
+        <input class="visually-hidden" checked="" type="checkbox"> <span class="toggle-btn__custom"></span> Получать спецпредложения </label>
     </fieldset>
-
     <button class="button-base --finish">перейти к оплате</button>
-
-    <div class="have-acc">
-      <span>Уже есть аккаунт на Toxin</span>
-      <button class="button-base --empty">войти</button>
-    </div>
-
-  </form>
-  
-  <form class="get-room-form form-card" action="">
-
-    <span class="room-desc">
-      <span class="room-desc__num --lux">888</span>
-      <span class="room-desc__price">9 990₽</span>
-    </span>
-
-    <fieldset class="dates-dropdowns">
-
-      <div>
-        <label class="title-label">прибытие</label>
-        <label class="text-field --dropdown">19.08.2019
-          <input class="visually-hidden" type="date">
-        </label>
-      </div>
-
-      <div>
-        <label class="title-label">выезд</label>
-        <label class="text-field --dropdown">23.08.2019
-          <input class="visually-hidden" type="date">
-        </label>
-      </div>
-
+    <fieldset class="have-acc">
+      <a class="have-acc__text" href="#enter">Уже есть аккаунт на Toxin</a>
+      <a href="#enter" class="button-base --empty">войти</a>
     </fieldset>
-
+  </form>
+  <form class="get-room-form form-card" action=""> <span class="room-desc">
+      <span class="room-desc__num --lux">888</span> <span class="room-desc__price">9 990₽</span> </span>
+    <fieldset class="dates-dropdowns">
+      <div class="range-datepicker">
+        <label class="title-label">прибытие
+          <input type="text" placeholder="19.08.2021" name="start" class="text-field --dropdown">
+        </label>
+        <label class="title-label">ВЫЕЗД
+          <input type="text" placeholder="23.08.2021" name="end" class="text-field --dropdown">
+        </label>
+      </div>
+    </fieldset>
     <section class="dropdown --for-people">
       <label class="title-label">гости</label>
       <input id="ui-dropD-for-peoples-2" class="dropdown__expand-check visually-hidden" type="checkbox">
       <label for="ui-dropD-for-peoples-2" class="text-field --dropdown">Сколько гостей</label>
       <ul class="dropdown__exp-list --shadow">
-        <li class="exp-list__item">
-          <span class="exp-list__name">взрослые</span>
+        <li class="exp-list__item"> <span class="exp-list__name">взрослые</span>
           <div class="exp-list__count">
             <button type="button" disabled="" class="count__btn-minus">-</button>
             <input type="text" readonly="" value="0" class="count__input">
             <button type="button" class="count__btn-plus">+</button>
           </div>
         </li>
-        <li class="exp-list__item">
-          <span class="exp-list__name">дети</span>
+        <li class="exp-list__item"> <span class="exp-list__name">дети</span>
           <div class="exp-list__count">
             <button type="button" disabled="" class="count__btn-minus">-</button>
             <input type="text" readonly="" value="0" class="count__input">
             <button type="button" class="count__btn-plus">+</button>
           </div>
         </li>
-        <li class="exp-list__item">
-          <span class="exp-list__name">младенцы</span>
+        <li class="exp-list__item"> <span class="exp-list__name">младенцы</span>
           <div class="exp-list__count">
             <button type="button" disabled="" class="count__btn-minus">-</button>
             <input type="text" readonly="" value="0" class="count__input">
@@ -647,27 +516,107 @@
         </li>
       </ul>
     </section>
-
     <ul class="get-room-form__calc">
       <li><span>9 990₽ х 4 суток</span><span>39 960₽</span></li>
       <li><span class="--info-btn">Сбор за услуги: скидка 2 179₽</span><span>0₽</span></li>
       <li><span class="--info-btn">Сбор за дополнительные услуги</span><span>300₽</span></li>
       <li class="sum"><span class="--underline-after">Итого</span><span>38 081₽</span></li>
     </ul>
-
     <button class="button-base --finish">забронировать</button>
   </form>
-  
-  <form class="enter-acc-form form-card" action=""></form>
-  
-  <div class="calendar"></div>
-  
-  <div class="room-card --lux"></div>
-  
-  <div class="room-card"></div>
-  
+  <form class="enter-acc-form form-card" action="">
+    <h2 class="--sizeLikeH1">Войти</h2>
+    <fieldset>
+      <input type="text" class="text-field" placeholder="Имя">
+      <input type="text" class="text-field" placeholder="Фамилия"> </fieldset>
+    <button class="button-base --finish">войти</button>
+    <fieldset class="have-acc">
+      <a class="have-acc__text" href="#enter">Нет аккаунта на Toxin?</a>
+      <a href="#enter" class="button-base --empty">создать</a>
+    </fieldset>
+  </form>
+  </form>
+  <div id="ui-calendar" class="calendar">
+      <input type="text" name="start" class="visually-hidden">
+      <input type="text" name="end" class="visually-hidden">
+  </div>
+
+  <div class="room-card --lux">
+    <a href="" class="room-card__link"></a>
+    <div class="room-card__img">
+      <div class="glider-contain">
+
+        <div class="glider">
+          <img width="270" height="152" src="src/img/Search%20room/image-1.jpg" alt="">
+          <img width="270" height="152" src="src/img/Search%20room/image-1.jpg" alt="">
+          <img width="270" height="152" src="src/img/Search%20room/image-1.jpg" alt="">
+          <img width="270" height="152" src="src/img/Search%20room/image-1.jpg" alt="">
+        </div>
+
+        <button aria-label="Previous" class="glider-btn-prev"></button>
+        <button aria-label="Next" class="glider-btn-next"></button>
+        <div role="tablist" class="dots"></div>
+      </div>
+    </div>
+      <div class="room-card__info">
+            <div class="room-desc">
+            <span class="room-desc__num --lux">888</span> <span class="room-desc__price">9 990₽</span> </div>
+        <div>
+          <div class="br-wrapper stars-rating">
+            <select class="stars-rating__select" style="display: none;">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option selected value="5">5</option>
+            </select>
+          </div> <span><b>145</b> отзывов</span>
+        </div>
+      </div>
+  </div>
+
+  <div class="room-card">
+    <a href="" class="room-card__link"></a>
+    <div class="room-card__img">
+      <div class="glider-contain">
+
+        <div class="glider">
+          <img width="270" height="152" src="src/img/Search%20room/image.jpg" alt="">
+          <img width="270" height="152" src="src/img/Search%20room/image.jpg" alt="">
+          <img width="270" height="152" src="src/img/Search%20room/image.jpg" alt="">
+          <img width="270" height="152" src="src/img/Search%20room/image.jpg" alt="">
+        </div>
+
+        <button aria-label="Previous" class="glider-btn-prev"></button>
+        <button aria-label="Next" class="glider-btn-next"></button>
+        <div role="tablist" class="dots"></div>
+      </div>
+    </div>
+      <div class="room-card__info">
+            <div class="room-desc">
+              <span class="room-desc__num --lux">840</span>
+              <span class="room-desc__price">9 990₽</span> </div>
+        <div>
+          <div class="br-wrapper stars-rating">
+            <select class="stars-rating__select" style="display: none;">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option selected value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div> <span><b>65</b> отзывов</span>
+        </div>
+      </div>
+  </div>
+
 </section>
 
+<link rel="stylesheet" href="src/jquery-plugins/Glider.js-master/glider.min.css">
+<script src="src/jquery-plugins/Glider.js-master/glider.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.1.4/dist/js/datepicker-full.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.1.4/dist/js/locales/ru.js"></script>
 <script type="text/javascript" src="src/app.js"></script>
-  </body>
+</body>
+
 </html>
