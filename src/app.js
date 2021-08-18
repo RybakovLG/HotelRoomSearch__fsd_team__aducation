@@ -4,7 +4,7 @@
 $('.stars-rating__select').barrating();
 
 
-//SLIDER ------
+//SLIDER ------------------------
 
 $(".js-range-slider").ionRangeSlider({
   type: 'double',
@@ -28,7 +28,7 @@ $(".js-range-slider").ionRangeSlider({
 
 
 
-//PAGINATION-------------
+//PAGINATION-------------------------------
 
 $('.pagination-holder').pagination({
   items: 15,
@@ -176,8 +176,6 @@ $('.dropdown__expand-check').one('click',function () {
 $('.ui-dropdowns-list .dropdown__expand-check').trigger('click');
 
 
-
-
 // LIKE BUTTONS------------------------
 
 $('.like-btn input').on('click',function (){
@@ -188,3 +186,72 @@ $('.like-btn input').on('click',function (){
       return $(this).prop('checked') ? ++text : --text;
 
     })}, 250); });
+
+
+//DATE PICKERS-----------------------------
+
+//RANGE----------------------
+
+$('.range-datepicker').each(function (){
+  new DateRangePicker(this, {
+
+    language: 'ru',
+    prevArrow: '',
+    nextArrow: '',
+    clearBtn: true,
+    todayHighlight: true,
+  })
+});
+
+//UI-DATEPICKER----------------
+
+const UIcalendar = document.getElementById('ui-calendar');
+const UIrangepicker = new DateRangePicker(UIcalendar, {
+
+  language: 'ru',
+  prevArrow: '',
+  nextArrow: '',
+  clearBtn: true,
+  todayHighlight: true,
+  container: '#ui-calendar',
+
+});
+$(UIcalendar).find('.datepicker:first').addClass('active static-pos');
+
+//Установка выбранных дат для UI
+UIrangepicker.setDates( '19.08.2019' , '23.08.2019' );
+$(UIcalendar).find('.datepicker:first').find('span[data-date=1565211600000]').addClass('today');
+
+//Вставка кнопки применить
+$('.clear-btn').after(`<button type="submit" class="button-base --mini">применить</button>`);
+
+//Закрывает Дэйтпикер при клике
+$('.datepicker').find('button[type=submit]').on('click', function () {
+
+  $(this).closest('.datepicker').removeClass('active');
+});
+
+
+//SLIDER on ROOM CARD --------------------
+
+$('.glider').each( function () {
+
+  const prevBtn = $(this).siblings('.glider-btn-prev')[0],
+        nextBtn = $(this).siblings('.glider-btn-next')[0],
+        dots = $(this).siblings('.dots')[0];
+
+  new Glider(this, {
+      slidesToShow: 1,
+      dots: dots,
+      scrollLock: true,
+      duration: 3,
+      scrollLockDelay: 500,
+      rewind: true,
+      arrows: {
+        prev: prevBtn,
+        next: nextBtn
+      }
+    });
+    }
+);
+
