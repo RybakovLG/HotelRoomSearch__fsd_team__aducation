@@ -73,7 +73,7 @@ body {
 body > section {
   max-width: 1440px;
   margin: auto;
-  border-bottom: 1px #f4f4f6 solid;
+  border-bottom: 1px #c7c7d0 solid;
   position: relative;
 }
 body > section::before {
@@ -98,6 +98,7 @@ h3 {
 
 ul {
   padding: 0;
+  margin: 0;
 }
 ul > li {
   list-style: none;
@@ -105,6 +106,7 @@ ul > li {
 
 a {
   text-decoration: none;
+  white-space: nowrap;
 }
 a:visited, a:link, a:active {
   color: inherit;
@@ -116,7 +118,7 @@ fieldset {
   border: none;
 }
 
-.section-colors-type {
+.ui-section-colors-type {
   padding: 145px 150px;
   display: flex;
   justify-content: space-between;
@@ -190,16 +192,16 @@ fieldset {
   max-width: 370px;
 }
 
-.section-form-elements {
+.ui-section-form-elements {
   padding: 140px 140px 130px 140px;
   display: grid;
   grid-template-columns: 266px 54px 1fr 320px 1fr 320px [end];
   grid-template-rows: auto 100px auto 160px auto 225px auto;
 }
-.section-form-elements > ul {
+.ui-section-form-elements > ul {
   margin: 0;
 }
-.section-form-elements > ul > li {
+.ui-section-form-elements > ul > li {
   position: relative;
 }
 
@@ -967,7 +969,7 @@ span.ellipse.clickable {
   grid-area: text;
 }
 
-.section-cards {
+.ui-section-cards {
   max-height: 1400px;
   width: 1440px;
   display: flex;
@@ -1062,6 +1064,7 @@ span.ellipse.clickable {
 .get-room-form__calc > li {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
   line-height: 18px;
 }
 .get-room-form__calc > li .--info-btn {
@@ -1220,6 +1223,126 @@ span.ellipse.clickable {
 .room-card.--lux .room-desc__num:after {
   display: inline;
   margin-left: 0.2em;
+}
+
+.ui-section-headers-footers {
+  padding: 140px 0;
+  background: #F4F4F6;
+}
+.ui-section-headers-footers .header {
+  padding: 0 140px;
+}
+.ui-section-headers-footers > * {
+  margin-bottom: 40px;
+}
+
+.header {
+  background: white;
+  display: inline-flex;
+  gap: 20px;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  height: 70px;
+}
+.header .logo-toxin {
+  margin-right: auto;
+  width: 106px;
+  height: 40px;
+}
+.header .logo-toxin svg {
+  width: inherit;
+  height: inherit;
+}
+.header .logo-toxin:hover {
+  opacity: 0.8;
+}
+.header nav {
+  height: inherit;
+}
+.header .nav {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  gap: 5px;
+}
+.header .nav__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  color: #8f90a0;
+}
+.header .nav__item:hover, .header .nav__item.--hover, .header .nav__item:focus-within {
+  color: #575871;
+  font-weight: 700;
+}
+.header .nav__item:hover.--expand, .header .nav__item.--hover.--expand, .header .nav__item:focus-within.--expand {
+  background-image: url("icons/expang_more-black.svg");
+}
+.header .nav__item:hover.--expand .nav-expand-list, .header .nav__item.--hover.--expand .nav-expand-list, .header .nav__item:focus-within.--expand .nav-expand-list {
+  display: flex;
+}
+.header .nav__item > a {
+  padding: 0.5rem 5px;
+}
+.header .nav__item::after {
+  content: attr(data-text);
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  user-select: none;
+  pointer-events: none;
+  font-weight: 700;
+  padding: 0 5px;
+}
+.header .nav__item.--expand {
+  padding: 0.5rem 1.25em 0.5rem 0;
+  background: url("icons/expand_icon.svg") no-repeat calc(100% - 4px) 55%/1em;
+}
+.header .nav__item.--expand .nav-expand-list {
+  box-sizing: content-box;
+  position: absolute;
+  background: white;
+  top: 100%;
+  min-width: 100%;
+  left: -1em;
+  padding: 0 1em 0.5em;
+  display: none;
+  flex-direction: column;
+  z-index: 1;
+}
+.header .nav__item.--expand .nav-expand-list__item {
+  white-space: nowrap;
+  font-weight: initial;
+}
+.header .nav__item.--expand .nav-expand-list__item a:hover, .header .nav__item.--expand .nav-expand-list__item a:focus-visible {
+  font-weight: 700;
+}
+.header .nav__item.--expand .nav-expand-list a {
+  display: block;
+  padding: 0.5em 5px;
+}
+.header .login-name-link, .header .header__vertical-line {
+  display: none;
+}
+.header.header--login > button {
+  display: none;
+}
+.header.header--login .login-name-link {
+  display: flex;
+  padding: 0.5rem 0;
+}
+.header.header--login .header__vertical-line {
+  color: transparent;
+  user-select: none;
+  display: block;
+  width: 1px;
+  height: calc(100% - 40px);
+  background: #e9e9ec;
 }
 
 /*# sourceMappingURL=style.css.map */
