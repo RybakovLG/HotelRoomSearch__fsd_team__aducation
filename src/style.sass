@@ -18,7 +18,7 @@ body
   >section
     max-width: 1440px
     margin: auto
-    border-bottom: 1px $DarkShade-5 solid
+    border-bottom: 1px $DarkShade-25 solid
     position: relative
     &::before
       content: url("icons/Logo_grey.svg")
@@ -41,11 +41,13 @@ h3
 
 ul
   padding: 0
+  margin: 0
   >li
     list-style: none
 
 a
   text-decoration: none
+  white-space: nowrap
   &:visited,
   &:link,
   &:active
@@ -56,9 +58,10 @@ fieldset
   padding: 0
   border: none
 
+
 //FONTS AND COLORS------------------------
 
-.section-colors-type
+.ui-section-colors-type
   padding: 145px 150px
   display: flex
   justify-content: space-between
@@ -136,7 +139,7 @@ fieldset
 
 //SECTION FORM ELEMENTS-------------------------------
 
-.section-form-elements
+.ui-section-form-elements
   padding: 140px 140px 130px 140px
   display: grid
   grid-template-columns: 266px 320-266px 1fr 320px 1fr 320px [end]
@@ -925,7 +928,7 @@ span.ellipse.clickable
 
 //SECTION-CARDS-----------------------------------
 
-.section-cards
+.ui-section-cards
   max-height: 1400px
   width: 1440px
   display: flex
@@ -1031,6 +1034,7 @@ span.ellipse.clickable
     >li
       display: flex
       justify-content: space-between
+      gap: 10px
       line-height: 18px
       .--info-btn
         flex: 0 1 240px
@@ -1058,7 +1062,6 @@ span.ellipse.clickable
   .sum
     margin-top: 30px
     @extend %itemTitleSizeFont
-    //$font-size: 19px
     font-size: 20px
     line-height: 1.2
     .--underline-after
@@ -1196,6 +1199,123 @@ span.ellipse.clickable
       &:after
         display: inline
         margin-left: .2em
+
+//HEADER------------------
+
+.ui-section-headers-footers
+  padding: 140px 0
+  background: #F4F4F6
+
+  .header
+    padding: 0 140px
+
+  >*
+    margin-bottom: 40px
+
+
+.header
+  background: white
+  display: inline-flex
+  gap: 20px
+  justify-content: flex-end
+  align-items: center
+  width: 100%
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05)
+  $header-h: 70px
+  height: $header-h
+
+  .logo-toxin
+    margin-right: auto
+    width: 106px
+    height: 40px
+    svg
+      width: inherit
+      height: inherit
+    &:hover
+      opacity: .8
+
+  nav
+    height: inherit
+
+  .nav
+    display: flex
+    height: 100%
+    align-items: center
+    gap: 5px
+
+    &__item
+      position: relative
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: space-between
+      cursor: pointer
+      color: $DarkShade-50
+
+      &:hover, &.--hover, &:focus-within
+        color: $DarkShade-75
+        font-weight: 700
+        &.--expand
+          background-image: url("icons/expang_more-black.svg")
+          .nav-expand-list
+            display: flex
+      >a
+        padding: .5rem 5px
+
+      &::after
+        content: attr(data-text)
+        height: 0
+        visibility: hidden
+        overflow: hidden
+        user-select: none
+        pointer-events: none
+        font-weight: 700
+        padding: 0 5px
+
+      &.--expand
+        padding: .5rem 1.25em .5rem 0
+        background: url("icons/expand_icon.svg") no-repeat calc(100% - 4px) 55%/1em
+        .nav-expand-list
+          box-sizing: content-box
+          position: absolute
+          background: white
+          top: 100%
+          min-width: 100%
+          left: -1em
+          padding: 0 1em .5em
+          display: none
+          flex-direction: column
+          z-index: 1
+
+          &__item
+            white-space: nowrap
+            font-weight: initial
+            a
+              &:hover, &:focus-visible
+                font-weight: 700
+          a
+            display: block
+            padding: .5em 5px
+
+  .login-name-link, .header__vertical-line
+    display: none
+
+
+  &.header--login
+    >button
+      display: none
+    .login-name-link
+      display: flex
+      padding: .5rem 0
+    .header__vertical-line
+      color: transparent
+      user-select: none
+      display: block
+      width: 1px
+      height: calc(100% - 40px)
+      background: $DarkShade-10
+
+
 
 
 
