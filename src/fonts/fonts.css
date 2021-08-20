@@ -1,0 +1,20 @@
+/* montserrat-regular - latin */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+    url('Montserrat-Regular.woff') format('woff'), /* Modern Browsers */
+    url('Montserrat-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('Montserrat-Regular.svg#Montserrat') format('svg'); /* Legacy iOS */
+}
+/* montserrat-700 - latin */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+    url('Montserrat-Bold.woff') format('woff'), /* Modern Browsers */
+    url('Montserrat-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('Montserrat-Bold.svg#Montserrat') format('svg'); /* Legacy iOS */
+}
