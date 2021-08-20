@@ -48,15 +48,24 @@ ul
 a
   text-decoration: none
   white-space: nowrap
+  position: relative
   &:visited,
   &:link,
   &:active
     color: inherit
+  &::before
+    @extend %minimalTouchZone
+
+
 
 fieldset
   margin: 0
   padding: 0
   border: none
+
+button
+  border: none
+  background-color: transparent
 
 
 //FONTS AND COLORS------------------------
@@ -256,9 +265,10 @@ fieldset
   padding-left: 30px
   color: $DarkShade-50
   cursor: pointer
-  transition: all 200ms ease-in
+  transition: font-weight 100ms
   &:hover
-    color: $DarkShade-75
+    font-weight: 700
+
     .check-box__custom
       border-color: $DarkShade-50
     input:checked ~ .check-box__custom
@@ -281,10 +291,19 @@ fieldset
     height: 20px
     border: 1px $DarkShade-25 solid
     border-radius: 4px
-    transition: all 200ms ease-out
+    transition: all 100ms
+  &::before
+    @extend %minimalTouchZone
 
 
-//RADIO BUTTON--------------------------------
+
+//RADIO BUTTONS--------------------------------
+
+.group-radio-btn
+  display: flex
+  gap: 20px
+  >*
+    flex: 0 0 102px
 
 .radio-btn
   position: relative
@@ -292,6 +311,7 @@ fieldset
   color: $DarkShade-50
   cursor: pointer
   user-select: none
+  transition: all 100ms
 
   input
     &:checked
@@ -308,20 +328,18 @@ fieldset
         border: 3px solid transparent
         background: $Purple-gradient padding-box
 
-
     &:focus-visible
       ~ .radio-btn__custom
         outline: 2px black solid
 
   &:hover
-    color: $DarkShade-75
+    font-weight: 700
     .radio-btn__custom
       border-color: $DarkShade-50
     input:checked ~ .radio-btn__custom
         opacity: .8
-
-  &+&
-    margin-left: 20px
+  &::before
+    @extend %minimalTouchZone
 
 .radio-btn__custom
   position: absolute
@@ -332,7 +350,7 @@ fieldset
   height: 20px
   border: 1px $DarkShade-25 solid
   border-radius: 50%
-  transition: all 200ms ease-in-out
+  transition: all 100ms
 
 
 //TOGGLE---------------------------
@@ -356,7 +374,11 @@ fieldset
       ~ .toggle-btn__custom
         outline: 2px black solid
   &:hover
-    opacity: .8
+    font-weight: 700
+    .toggle-btn__custom
+      opacity: .5
+  &::before
+    @extend %minimalTouchZone
 
 .toggle-btn__custom
   position: absolute
@@ -368,7 +390,7 @@ fieldset
   height: 20px
   border: 1px $DarkShade-25 solid
   border-radius: 10px
-  transition: all 200ms ease-in-out
+  transition: all 100ms
   &::before
     content: ''
     position: absolute
@@ -397,10 +419,11 @@ fieldset
   font-size: 10px
   line-height: 20px
   user-select: none
-  transition: all 200ms ease-in-out
+  transition: all 100ms
+  color: $DarkShade-25
   &__sum
-    color: $DarkShade-25
-    &:before
+    color: inherit
+    &::before
       content: ''
       position: absolute
       border: 1px $DarkShade-25 solid
@@ -412,7 +435,7 @@ fieldset
       background:  url("icons/like-icon.svg") no-repeat 5px center
 
   &:hover
-    opacity: .8
+    opacity: .5
     cursor: pointer
 
   input
@@ -440,6 +463,8 @@ fieldset
       ~ .like-btn__sum:before
         outline: 2px black solid
 
+  &::before
+    @extend %minimalTouchZone
 
 
 //UI-SLIDERS-BTNS-LIST---------
@@ -513,9 +538,20 @@ fieldset
   z-index: 1
   top: -4px
   left: 0
-  &:hover
+  &:hover, &:focus-within
     background: $Green-gradient
     border-color: $DarkShade-75
+  &::after
+    position: absolute
+    border-radius: 50%
+    content: ''
+    left: 50%
+    top: 50%
+    width: 44px
+    height: 44px
+    transform: translate(-50%, -50%)
+
+
 
 
 //BUTTONS----------------------
@@ -563,13 +599,9 @@ fieldset
     &:hover,
     &.--hover
       color: $DarkShade-50
-    &:before
-      content: ''
-      position: absolute
-      top: -10px
-      right: -10px
-      bottom: -10px
-      left: -10px
+
+  &::before
+    @extend %minimalTouchZone
 
 
 //PAGINATION ---------------------
@@ -720,6 +752,7 @@ span.ellipse.clickable
 .count__btn-minus,
 .count__btn-plus
   vertical-align: bottom
+  position: relative
   cursor: pointer
   width: 30px
   height: 30px
@@ -737,6 +770,8 @@ span.ellipse.clickable
   &:disabled
     color: $DarkShade-25
     border-color: $DarkShade-5
+  &::before
+    @extend %minimalTouchZone
 
 
 
@@ -988,7 +1023,6 @@ span.ellipse.clickable
   input:not(:last-child)
     margin-bottom: 10px
 
-
 .have-acc
   display: inline-flex
   align-items: center
@@ -996,7 +1030,7 @@ span.ellipse.clickable
   width: 100%
   &__text
     &:hover
-      opacity: .8
+      opacity: .5
 
 
 //GET-ROOM--FORM------------------
@@ -1041,7 +1075,7 @@ span.ellipse.clickable
         padding-right: 25px
         position: relative
 
-        &:after
+        &::after
           content: 'i'
           position: absolute
           font-weight: bold
@@ -1055,7 +1089,10 @@ span.ellipse.clickable
           height: 20px
           border: 1px solid $DarkShade-25
           border-radius: 50%
-
+        &:hover
+          &::after
+            color: $DarkShade-50
+            border-color: $DarkShade-50
     >li + li
       margin-top: 18px
 
@@ -1095,7 +1132,6 @@ span.ellipse.clickable
 
 //ROOM-CARD---------------------------------------
 
-
 .room-card
   background: #FFFFFF
   box-shadow:  0 10px 20px rgba(31, 32, 65, 0.05)
@@ -1110,8 +1146,6 @@ span.ellipse.clickable
     right: 0
     top: 0
     bottom: 0
-
-
 
   &__img
     width: 270px
@@ -1200,18 +1234,52 @@ span.ellipse.clickable
         display: inline
         margin-left: .2em
 
-//HEADER------------------
+
+//HEADER-----------------------------------
 
 .ui-section-headers-footers
   padding: 140px 0
   background: #F4F4F6
 
-  .header
-    padding: 0 140px
+  header, footer
+    padding-left: clamp(20px, 10%, 140px)
+    padding-right: clamp(20px, 10%, 140px)
+
+    @include media-breakpoint-down(xl)
+      padding-left: clamp(20px, 5%, 140px)
+      padding-right: clamp(20px, 5%, 140px)
 
   >*
     margin-bottom: 40px
 
+  .footer.ui-width
+    margin: auto
+    padding-top: 0
+    max-width: 768px
+    .footer__bottom
+      padding-top: 120px
+      padding-bottom: 120px
+      flex-direction: column
+      gap: 20px
+      span
+        text-align: center
+      &::before
+        display: none
+    .logo-toxin
+      display: revert
+    .social-links
+      margin-top: 10px
+
+
+
+.logo-toxin
+  width: 106px
+  height: 40px
+  >*
+    width: inherit
+    height: inherit
+  &:hover
+    opacity: .5
 
 .header
   background: white
@@ -1224,24 +1292,22 @@ span.ellipse.clickable
   $header-h: 70px
   height: $header-h
 
+  &__login-area
+    display: flex
+    gap: inherit
+    align-items: inherit
+
   .logo-toxin
     margin-right: auto
-    width: 106px
-    height: 40px
-    svg
-      width: inherit
-      height: inherit
-    &:hover
-      opacity: .8
 
   nav
-    height: inherit
+    position: relative
 
   .nav
     display: flex
     height: 100%
     align-items: center
-    gap: 5px
+    gap: 20px
 
     &__item
       position: relative
@@ -1251,16 +1317,17 @@ span.ellipse.clickable
       justify-content: space-between
       cursor: pointer
       color: $DarkShade-50
+      >*
+        padding: .5em 0
+        &::before
+          @extend %minimalTouchZone
 
       &:hover, &.--hover, &:focus-within
         color: $DarkShade-75
         font-weight: 700
         &.--expand
-          background-image: url("icons/expang_more-black.svg")
           .nav-expand-list
             display: flex
-      >a
-        padding: .5rem 5px
 
       &::after
         content: attr(data-text)
@@ -1270,53 +1337,242 @@ span.ellipse.clickable
         user-select: none
         pointer-events: none
         font-weight: 700
-        padding: 0 5px
 
       &.--expand
-        padding: .5rem 1.25em .5rem 0
+        padding-right: 1.5em
         background: url("icons/expand_icon.svg") no-repeat calc(100% - 4px) 55%/1em
-        .nav-expand-list
-          box-sizing: content-box
-          position: absolute
-          background: white
-          top: 100%
-          min-width: 100%
-          left: -1em
-          padding: 0 1em .5em
-          display: none
-          flex-direction: column
-          z-index: 1
 
-          &__item
-            white-space: nowrap
-            font-weight: initial
-            a
-              &:hover, &:focus-visible
-                font-weight: 700
-          a
-            display: block
-            padding: .5em 5px
+    .nav-expand-list
+      position: absolute
+      background: white
+      top: 100%
+      min-width: calc(100% + 1.5em)
+      left: -1em
+      display: none
+      flex-direction: column
+      z-index: 1
+      padding: 0
 
-  .login-name-link, .header__vertical-line
+      &__item
+        white-space: nowrap
+        font-weight: initial
+        >*
+          display: block
+          padding: .5em 1em
+          &:hover, &:focus-visible
+            font-weight: 700
+
+  .nav-burger
+    white-space: nowrap
+    font-weight: 700
+    align-items: center
+    position: relative
+    padding-left: calc(20px + 2em)
+    >*
+      position: absolute
+      left: 1em
+      width: 2em
+      height: 2em
+
+  .login-btn
+    display: block
+    position: relative
+    padding: .5em
+    color: white
+    cursor: pointer
+    border-radius: 50%
+    background: $DarkShade-50
+    &:hover, &:focus
+      background: $DarkShade-25
+    >*
+      vertical-align: middle
+      width: 1.5em
+      height: 1.5em
+    &::before
+      @extend %minimalTouchZone
+
+  .header__vertical-line
+    color: transparent
+    user-select: none
+    display: block
+    width: 1px
+    height: 2em
+    background: $DarkShade-10
+
+  .login-name-link,
+  .header__vertical-line,
+  .nav-burger,
+  .login-btn
     display: none
 
 
+  @include media-breakpoint-down(lg)
+    nav
+      &:focus-within
+        .nav
+          visibility: visible
+
+    .nav-burger
+      display: flex
+      cursor: pointer
+
+    .nav
+      flex-direction: column
+      gap: 0
+      position: absolute
+      left: 0
+      z-index: 1
+      background-color: white
+      height: auto
+      visibility: hidden
+      .nav__item
+        >*
+          min-width: 130px
+          padding: .5em 0 .5em 1em
+          align-self: flex-start
+      .nav__item, a
+        width: 100%
+
+      .nav-expand-list
+        position: absolute
+        top: 0
+        left: unset
+        right: 100%
+        padding: 0
+        min-width: 115px
+
+
+  @include media-breakpoint-down(md)
+    &
+      gap: 10px
+
+    .login-btn
+      display: block
+
+    .header__btn
+      display: none
+
+    .header__vertical-line
+      display: block
+
+
   &.header--login
-    >button
+    .header__btn
       display: none
     .login-name-link
       display: flex
       padding: .5rem 0
     .header__vertical-line
-      color: transparent
-      user-select: none
       display: block
-      width: 1px
-      height: calc(100% - 40px)
-      background: $DarkShade-10
+    .login-btn
+      background: $Purple-gradient
+      &:hover, &:focus
+        background: $Purple-gradient--50
+
+    @include media-breakpoint-down(md)
+      .login-name-link
+        display: none
 
 
+//FOOTERS---------------------------
+
+.footer
+  padding-top: 100px
+  background-color: white
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05)
+  &__main
+    padding-bottom: 100px
+    display: none
+
+  a:hover
+    font-weight: 700
+
+  &__bottom
+    min-height: 70px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    position: relative
+    &::before
+      position: absolute
+      content: ''
+      top: 0
+      left: 50%
+      transform: translate(-50%)
+      height: 1px
+      width:  min(100vw, 1440px)
+      background: $DarkShade-10 padding-box
+
+    .social-links
+      >*
+        float: left
+        width: 24px
+        height: 24px
+        &:hover
+          opacity: .5
+      >* + *
+        margin-left: 20px
+      a
+        display: block
+        height: inherit
+
+    .logo-toxin
+      display: none
+
+  @include media-breakpoint-down(md)
+    padding-top: 0
+    &__bottom
+      padding-top: 120px
+      padding-bottom: 120px
+      flex-direction: column
+      gap: 20px
+      span
+        text-align: center
+    .logo-toxin
+      display: revert
+    .social-links
+      margin-top: 10px
 
 
+  @include media-breakpoint-up(md)
+    &__main
+      display: flex
+      flex-wrap: nowrap
+      justify-content: space-between
+      gap: 40px
+      >*
+        min-width: 151px //для стабилизации ховера с болд эффектом
 
+    &__promo,
+    &__nav-list,
+    &__subscription
+      * + *
+        margin-top: 20px
+
+    &__nav-list
+      white-space: nowrap
+      >li
+        color: $DarkShade-50
+
+    &__promo,
+    &__subscription
+      flex: 0 1 260px
+
+  @include media-breakpoint-between(md, xl)
+    &__main
+      flex-wrap: wrap
+      justify-content: space-around
+
+    &__promo,
+    &__nav-list,
+    &__subscription
+      * + *
+        margin-top: .7em
+
+    h3
+      margin-bottom: 1.5em
+
+    &__subscription, &__promo
+      order: -1
+      flex: 0 1 40%
 

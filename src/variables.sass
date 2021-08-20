@@ -1,7 +1,10 @@
+//BOOTSTRAP-MEDIA-QUERIES---------------------
 
-//GLOBAL VARIABLES
+@import "bootstrap-Media-queries/media-queries"
 
-//VISUALLY HIDDEN CLASS
+//GLOBAL VARIABLES---------------------------
+
+//VISUALLY CLASSES---------------------------
 
 .visually-hidden
   position: absolute !important
@@ -25,7 +28,7 @@
     padding-top: 0
 
 
-//COLORS---------------------------
+//COLORS-----------------------------------------
 
 $DarkShade-100: #1F2041
 $DarkShade-75: mix($DarkShade-100, white, 75)
@@ -36,20 +39,18 @@ $DarkShade-5:  mix($DarkShade-100, white, 5)
 $Purple: #BC9CFF
 $Green: #6FCF97
 
-//$Green-gradient--50: linear-gradient(180deg, rgba(111, 207, 151, .5) 0%, rgba(102, 210, 234, .5) 100%)
-
 $Purple-gradient--50: linear-gradient(180deg, mix($Purple, white) 0%, mix(#8BA4F9, white) 100%)
 $Green-gradient--50: linear-gradient(180deg, mix($Green, white) 0%, mix(#66D2EA, white) 100%)
 
 $Purple-gradient: linear-gradient(180deg, $Purple 0%, #8BA4F9 100%)
 $Green-gradient: linear-gradient(180deg, $Green 0%, #66D2EA 100%)
 
-//SHADOWS---------------------
+//SHADOWS---------------------------------
 
 .--shadow
   box-shadow: 0 10px 20px $DarkShade-5
 
-//FONTS--------------------------
+//FONTS-------------------------------------------
 
 $mainFont: Montserrat, sans-serif
 
@@ -78,6 +79,17 @@ $mainFont: Montserrat, sans-serif
   line-height: 29px
   color: $DarkShade-100
 
+//PSEUDO-FOR-MINIMUM-44px-LINK------FOR-TOUCH-----
+
+%minimalTouchZone
+  content: ''
+  position: absolute
+  top: 50%
+  left: 50%
+  height: max(100%, 44px)
+  width: max(100%, 44px)
+  transform: translate(-50%, -50%)
+  //background-color: rgba(118,170,161,0.22)
 
 
 //*
