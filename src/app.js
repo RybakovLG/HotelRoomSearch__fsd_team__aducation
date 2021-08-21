@@ -254,4 +254,3 @@ $('.glider').each( function () {
     });
     }
 );
-
