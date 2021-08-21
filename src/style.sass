@@ -917,7 +917,7 @@ span.ellipse.clickable
 
 //UI-COMMENTS-LIST--------------------
 
-.ui-comments-list
+.ui-comments
   grid-column: 4 / end
   grid-row: 7
   >:first-child
@@ -1519,6 +1519,11 @@ span.ellipse.clickable
     .logo-toxin
       display: none
 
+  &__nav-list
+    white-space: nowrap
+    li
+      color: $DarkShade-50
+
   @include media-breakpoint-down(md)
     padding-top: 0
     &__bottom
@@ -1532,7 +1537,6 @@ span.ellipse.clickable
       display: revert
     .social-links
       margin-top: 10px
-
 
   @include media-breakpoint-up(md)
     &__main
@@ -1549,11 +1553,6 @@ span.ellipse.clickable
       * + *
         margin-top: 20px
 
-    &__nav-list
-      white-space: nowrap
-      >li
-        color: $DarkShade-50
-
     &__promo,
     &__subscription
       flex: 0 1 260px
@@ -1567,10 +1566,7 @@ span.ellipse.clickable
     &__nav-list,
     &__subscription
       * + *
-        margin-top: .7em
-
-    h3
-      margin-bottom: 1.5em
+        margin-top: .75em
 
     &__subscription, &__promo
       order: -1
