@@ -84,9 +84,16 @@ $mainFont: Montserrat, sans-serif
 
 //RETINA__MEDIA-------------
 
-@mixin mediaForRetina($backgroundPath)
-    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-resolution: 1.5dppx), only screen and (min-resolution: 144dpi)
-        background-image: $backgroundPath
+//@mixin mediaDPR2($backgroundPath)
+//    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-resolution: 1.5dppx), only screen and (min-resolution: 144dpi)
+//        background-image: $backgroundPath
+
+@mixin mediaHiDPR($Ratio, $url)
+   @media screen and (-webkit-min-device-pixel-ratio: $Ratio), only screen and (min--moz-device-pixel-ratio: $Ratio), only screen and (-o-min-device-pixel-ratio: $Ratio), only screen and (min-resolution: #{$Ratio}dppx), only screen and (min-resolution: $Ratio * 96dpi)
+        background-image: url($url)
+//@mixin mediaDPR3($backgroundPath)
+//    @media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min--moz-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3/1), only screen and (min-resolution: 3dppx), only screen and (min-resolution: 144dpi)
+//        background-image: $backgroundPath
 
 
 
