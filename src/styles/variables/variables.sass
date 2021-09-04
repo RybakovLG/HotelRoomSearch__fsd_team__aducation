@@ -81,6 +81,13 @@ $mainFont: Montserrat, sans-serif
         padding-left: clamp(20px, 5%, 140px)
         padding-right: clamp(20px, 5%, 140px)
 
+
+//RETINA__MEDIA-------------
+
+@mixin mediaForRetina($backgroundPath)
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-resolution: 1.5dppx), only screen and (min-resolution: 144dpi)
+        background-image: $backgroundPath
+
 //*
 //  outline: 1px solid $DarkShade-25 !important
 
