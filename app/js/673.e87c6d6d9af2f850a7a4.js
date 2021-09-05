@@ -1,0 +1,1 @@
+(self.webpackChunk=self.webpackChunk||[]).push([[673],{6827:(e,r,n)=>{"use strict";n.r(r)},673:(e,r,n)=>{var t={"./button.sass":6827};function o(e){var r=s(e);return n(r)}function s(e){if(!n.o(t,e)){var r=new Error("Cannot find module '"+e+"'");throw r.code="MODULE_NOT_FOUND",r}return t[e]}o.keys=function(){return Object.keys(t)},o.resolve=s,e.exports=o,o.id=673}}]);
