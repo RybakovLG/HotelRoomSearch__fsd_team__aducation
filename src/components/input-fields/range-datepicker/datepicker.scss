@@ -41,9 +41,7 @@ $dp-range-start-end-color: $dp-cell-selected-color !default;
 $dp-range-background-color: lighten($Purple , 15%) !default;
 $dp-range-today-background-color: $dp-cell-today-background-color !default;
 $dp-week-color: $light !default;
-
 $dp-footer-background-color: $light !default;
-
 $dp-input-in-edit-border-color: darken($link, 5%) !default;
 $dp-input-in-edit-focus-box-shadow-size: 0 0 0.25em 0.25em !default;
 
@@ -83,7 +81,9 @@ $dp-cell-shrinked-width: $dp-cell-size-base * 7 / 8;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
   border-radius: 4px;
   padding: 20px;
-  max-width: 320px;
+  @media (max-width: 425px) {
+    padding: 15px 10px;
+  }
 
   span {
     display: flex;
@@ -98,15 +98,7 @@ $dp-cell-shrinked-width: $dp-cell-size-base * 7 / 8;
     user-select: none;
     font-size: 12px;
     color: $DarkShade-50;
-    width: 40px;
-    height: 40px;
-
   }
-}
-
-
-.datepicker-footer {
-
 }
 
 %flex-container {
@@ -241,7 +233,7 @@ $dp-cell-shrinked-width: $dp-cell-size-base * 7 / 8;
   @extend %flex-container;
   @extend %flex-wrap;
 
-  width: $dp-cell-size-base * 7;
+  width: 100%;
 
   @media (max-width: $dp-cell-shrink-threshold) {
     .calendar-weeks + .days & {
