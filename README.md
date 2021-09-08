@@ -4,7 +4,7 @@
 -----
 ### Github pages: [https://rybakovlg.github.io/HotelRoomSearch](https://rybakovlg.github.io/HotelRoomSearch__fsd_team__aducation/index.html)
 ### Макеты Figma: [https://www.figma.com/MetaLamp-education-program](https://www.figma.com/file/nDL1LMsLtaD4XEAfQZCVIR/MetaLamp-(former-FSD)-frontend-education-program.-The-2nd-task-(Copy))
-####Примеры страниц:
+#### Примеры страниц:
 *(активные)* </br>
 [![reg-page](pages_img/Screenshot_2.jpg "Регистрация")](https://rybakovlg.github.io/HotelRoomSearch__fsd_team__aducation/app/registration-page.html) .
 [![info-page](pages_img/Screenshot_4.jpg "Подробнее")](https://rybakovlg.github.io/HotelRoomSearch__fsd_team__aducation/app/room-details.html) .
