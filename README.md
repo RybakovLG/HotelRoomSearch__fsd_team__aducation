@@ -1,15 +1,15 @@
-##Макет страниц по поиску номеров в отеле TOXIN
+## Макет страниц по поиску номеров в отеле TOXIN
 [**Обучающее задание 2**](https://rizzoma.com/topic/d5c429337bcaa70548fb5aeedee6d92b/0_b_8ndo_78h6s/) на фронтенд разработчика от `#fsd` `#fsd_team`
 
 -----
-###Github pages: [https://rybakovlg.github.io/HotelRoomSearch](https://rybakovlg.github.io/HotelRoomSearch__fsd_team__aducation/index.html)
-####[Макет в Figma](https://www.figma.com/file/nDL1LMsLtaD4XEAfQZCVIR/MetaLamp-(former-FSD)-frontend-education-program.-The-2nd-task-(Copy))
+### Github pages: [https://rybakovlg.github.io/HotelRoomSearch](https://rybakovlg.github.io/HotelRoomSearch__fsd_team__aducation/index.html)
+#### [Макет в Figma](https://www.figma.com/file/nDL1LMsLtaD4XEAfQZCVIR/MetaLamp-(former-FSD)-frontend-education-program.-The-2nd-task-(Copy))
 [![reg-page](pages_img/Screenshot_2.jpg "Регистрация")](https://rybakovlg.github.io/HotelRoomSearch__fsd_team__aducation/app/registration-page.html)
 [![info-page](pages_img/Screenshot_4.jpg "Подробнее")](https://rybakovlg.github.io/HotelRoomSearch__fsd_team__aducation/app/room-details.html)
 [![search-page](pages_img/Screenshot_3.jpg "Поиск")](https://rybakovlg.github.io/HotelRoomSearch__fsd_team__aducation/app/search-room.html)
 
 ----
-###Команды
+### Команды
 `npm run w` - dev-server
 
 `npm run d` - development сборка
