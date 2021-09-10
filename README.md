@@ -9,6 +9,9 @@
 | [![reg-page](pages_img/Screenshot_2.jpg "Регистрация")](https://rybakovlg.github.io/HotelRoomSearch__fsd_team__aducation/app/registration-page.html) | [![info-page](pages_img/Screenshot_4.jpg "Подробнее")](https://rybakovlg.github.io/HotelRoomSearch__fsd_team__aducation/app/room-details.html) | [![search-page](pages_img/Screenshot_3.jpg "Поиск")](https://rybakovlg.github.io/HotelRoomSearch__fsd_team__aducation/app/search-room.html)
 |:---:|:---:|:---:|
 [*Регистрация*](https://rybakovlg.github.io/HotelRoomSearch__fsd_team__aducation/app/registration-page.html) | [*О номере*](https://rybakovlg.github.io/HotelRoomSearch__fsd_team__aducation/app/room-details.html) | [*Поиск*](https://rybakovlg.github.io/HotelRoomSearch__fsd_team__aducation/app/search-room.html)
+**Установка:** :metal:  
+`git clone https://github.com/RybakovLG/HotelRoomSearch__fsd_team__aducation.git && cd HotelRoomSearch__fsd_team__aducation && npm i`
+
 
 ----
 | :video_game: | :package: |
