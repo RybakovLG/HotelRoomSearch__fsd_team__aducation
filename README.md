@@ -1,11 +1,10 @@
-## Макет страниц по поиску номеров в отеле TOXIN :beginner:
+## Макет страниц по поиску номеров в отеле TOXIN <img width="25" height="25" src="https://github.com/RybakovLG/HotelRoomSearch__fsd_team__aducation/blob/master/fav-icons/toxin.svg" alt="rizzoma">
 *[**Обучающее задание 2**](https://rizzoma.com/topic/d5c429337bcaa70548fb5aeedee6d92b/0_b_8ndo_78h6s/) на фронтенд разработчика от `#fsd` `#fsd_team`*
 
 -----
-:octocat:
-**Github pages:** [**https://rybakovlg.github.io/HotelRoomSearch**](https://rybakovlg.github.io/HotelRoomSearch__fsd_team__aducation/index.html)  
-![rizzoma](pages_img/rizzoma.png)
-**Макет в Figma:** [**https://www.figma.com/MetaLamp-education-program**](https://www.figma.com/file/nDL1LMsLtaD4XEAfQZCVIR/MetaLamp-(former-FSD)-frontend-education-program.-The-2nd-task-(Copy))
+**Github pages:** [**https://rybakovlg.github.io/HotelRoomSearch**](https://rybakovlg.github.io/HotelRoomSearch__fsd_team__aducation/index.html) :octocat:
+
+**Макет:** [**https://www.figma.com/MetaLamp-education-program**](https://www.figma.com/file/nDL1LMsLtaD4XEAfQZCVIR/MetaLamp-(former-FSD)-frontend-education-program.-The-2nd-task-(Copy)) <img width="20" height="20" src="https://cdn.worldvectorlogo.com/logos/figma-1.svg" alt="rizzoma">
 
 | [![reg-page](pages_img/Screenshot_2.jpg "Регистрация")](https://rybakovlg.github.io/HotelRoomSearch__fsd_team__aducation/app/registration-page.html) | [![info-page](pages_img/Screenshot_4.jpg "Подробнее")](https://rybakovlg.github.io/HotelRoomSearch__fsd_team__aducation/app/room-details.html) | [![search-page](pages_img/Screenshot_3.jpg "Поиск")](https://rybakovlg.github.io/HotelRoomSearch__fsd_team__aducation/app/search-room.html)
 |:---:|:---:|:---:|
@@ -20,7 +19,7 @@
 | `npm run b` | **production** |
 
 ----
-#### Дополнительно:
+### Дополнительно:
 - **Подключены и настроены плагины:**
    - *Выпадающий выбор дат (2 варианта)*
    - *Пагинация (не включена)*
