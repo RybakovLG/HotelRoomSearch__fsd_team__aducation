@@ -11,12 +11,10 @@
 [*Регистрация*](https://rybakovlg.github.io/HotelRoomSearch__fsd_team__aducation/app/registration-page.html) | [*О номере*](https://rybakovlg.github.io/HotelRoomSearch__fsd_team__aducation/app/room-details.html) | [*Поиск*](https://rybakovlg.github.io/HotelRoomSearch__fsd_team__aducation/app/search-room.html)
 
 ----
-| :video_game: | :package: |
-|:---:|:---:|
-| - **Webpack** - **jQuery** - **Sass** - **Pug** - |  |
-| `npm run w` | **dev-server**  |
-| `npm run d` | **development** | 
-| `npm run b` | **production** |
+| :video_game: | 
+|:---:|
+| - **Webpack** - **jQuery** - **Sass** - **Pug** - |
+
 
 ----
 ### Дополнительно:
