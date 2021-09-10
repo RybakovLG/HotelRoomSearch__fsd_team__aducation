@@ -4,6 +4,8 @@
 -----
 **Github pages:** [**https://rybakovlg.github.io/HotelRoomSearch**](https://rybakovlg.github.io/HotelRoomSearch__fsd_team__aducation/index.html) :octocat:
 
+**Ветка с итоговым бандлом:** [**https://github.com/RybakovLG//tree/gh-pages**](https://github.com/RybakovLG/HotelRoomSearch__fsd_team__aducation/tree/gh-pages) :file_folder:
+
 **Макет:** [**https://www.figma.com/MetaLamp-education-program**](https://www.figma.com/file/nDL1LMsLtaD4XEAfQZCVIR/MetaLamp-(former-FSD)-frontend-education-program.-The-2nd-task-(Copy)) <img width="20" height="20" src="https://cdn.worldvectorlogo.com/logos/figma-1.svg" alt="rizzoma">
 
 | [![reg-page](pages_img/Screenshot_2.jpg "Регистрация")](https://rybakovlg.github.io/HotelRoomSearch__fsd_team__aducation/app/registration-page.html) | [![info-page](pages_img/Screenshot_4.jpg "Подробнее")](https://rybakovlg.github.io/HotelRoomSearch__fsd_team__aducation/app/room-details.html) | [![search-page](pages_img/Screenshot_3.jpg "Поиск")](https://rybakovlg.github.io/HotelRoomSearch__fsd_team__aducation/app/search-room.html)
