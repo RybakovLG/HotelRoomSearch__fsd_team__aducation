@@ -1,0 +1,310 @@
+.l-main
+  padding-left: 0
+  padding-right: 0
+  padding-bottom: 70px
+
+$gap: 5px
+
+.room-details
+  &__pics
+
+    margin-top: 20px
+    margin-bottom: 40px
+    background: $DarkShade-75
+
+  &__pics-pic
+    width: 100%
+    height: auto
+    vertical-align: middle
+
+  &__pics-pic + &__pics-pic
+    margin-top: $gap
+
+  @include media-breakpoint-up(sm)
+    &__pics
+      display: flex
+      flex-wrap: wrap
+
+      gap: $gap
+      width: 100%
+
+    &__pics-pic
+      height: 250px
+      object-fit: cover
+      width: calc(50% - (#{$gap} / 2))
+      &:first-child
+        width: 100%
+        margin: 0
+
+    &__pics-pic + &__pics-pic
+      margin-top: 0
+
+  @include media-breakpoint-between(md, xl)
+    &__pics
+      justify-content: space-between
+    &__pics-pic,
+    &__pics-pic:first-child
+      width: calc(33% - (#{$gap} / 3))
+
+
+  @include media-breakpoint-up(xl)
+    &__pics
+      display: grid
+      grid-template-areas: "pic1 pic1 pic2" "pic1 pic1 pic3"
+      grid-template-rows: repeat(2, calc(485px / 2))
+      height: 485px
+      margin-bottom: 70px
+      overflow: hidden
+
+    &__pics-pic
+      width: 100%
+      height: 100%
+
+      &:last-child
+        grid-area: pic3
+        width: 100%
+      &:nth-child(2)
+        grid-area: pic2
+      &:nth-child(1)
+        grid-area: pic1
+
+  &__info
+    @extend %mainIndents
+
+    & > * + *
+      margin-top: 30px
+
+    .info-card
+      & > *
+        margin: auto
+
+    .info-reviews
+      .info__title
+        display: flex
+        justify-content: space-between
+        &::after
+          padding-left: 1em
+          color: $DarkShade-50
+          content: ' 2 отзыва'
+          @extend %mainSizeFont
+
+      .comment + .comment
+        margin-top: 20px
+
+    .info-rules
+      .info__title
+        margin-left: calc(.66rem + 10px)
+
+    .info__title
+      margin-bottom: 20px
+
+    @include media-breakpoint-up(md)
+      display: grid
+      grid-template-areas: "about impress""reviews reviews""card card""rules abort"
+      gap: 30px
+      & > * + *
+        margin: 0
+
+      .info-about
+        grid-area: about
+      .info-impress
+        grid-area: impress
+      .info-reviews
+        grid-area: reviews
+      .info-card
+        grid-area: card
+      .info-rules
+        grid-area: rules
+      .info-abort
+        grid-area: abort
+
+    @include media-breakpoint-between(md, xl)
+      grid-template-areas: "about impress""reviews card""rules abort"
+
+    @include media-breakpoint-up(xl)
+      grid-template-areas: "about impress card""reviews reviews card""rules abort card"
+      grid-template-columns: 280px 320px 380px
+      justify-content: space-between
+
+.bonuses-list
+
+  .bonuses-item
+    padding: 20px 0
+
+  .bonuses-item + .bonuses-item
+    border-top: 1px solid $DarkShade-10
+
+.bonuses-item
+  position: relative
+  display: grid
+  min-height: 48px
+  grid-column-gap: 10px
+  grid-template-columns: 48px auto
+  grid-template-areas: "icon title""icon desc"
+
+  &__icon
+    grid-area: icon
+    height: 40px
+    width: auto
+    align-self: center
+    justify-self: center
+
+  &__title
+    grid-area: title
+    font-weight: 700
+
+  &__desc
+    grid-area: desc
+
+
+.info-impress
+  &__circle
+    background: url("../../assets/images/icons/Pie.svg") no-repeat center/contain
+    height: 120px
+    width: 120px
+    display: inline-block
+    vertical-align: bottom
+    margin-right: 30px
+    @include media-breakpoint-down(sm)
+      width: 100px
+      height: 100px
+      margin-right: 10px
+
+  &__list
+    display: inline-block
+
+  &__list-item
+    &:first-child
+      margin-top: 2em
+    &::before
+      content: ''
+      display: inline-block
+      border-radius: 50%
+      width: 10px
+      height: 10px
+      margin-right: .33em
+
+    &:nth-child(1)
+      &::before
+        background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%)
+    &:nth-child(2)
+      &::before
+        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
+    &:nth-child(3)
+      &::before
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+    &:nth-child(4)
+      &::before
+        background: linear-gradient(180deg, #919191 0%, #3D4975 100%)
+
+
+.comment
+  display: grid
+  grid-template-areas: "avatar name" "avatar date" "like text"
+  grid-column-gap: 10px
+
+  &__avatar
+    position: relative
+    width: 48px
+    height: 48px
+    grid-area: avatar
+    box-shadow: 0 10px 20px rgba(31, 32, 65, .1)
+    margin-bottom: 10px
+    border-radius: 50%
+    border: 2px solid white
+    & > *
+      clip-path: circle(calc(50.0% - 2px) at 50% 50%)
+      transform: translateY(-2px) translateX(-2px)
+
+  &__who
+    font-weight: 700
+    grid-area: name
+
+  &__date
+    grid-area: date
+    margin-bottom: 10px
+
+  &__likes
+    justify-self: center
+    grid-area: like
+
+  &__text
+    margin: 0
+    grid-area: text
+
+.like-btn
+  position: relative
+  display: inline-block
+  min-width: 40px
+  height: 20px
+  border-radius: 10px
+  text-align: end
+  padding: 0 10px 0 15px
+  font-size: 10px
+  line-height: 20px
+  user-select: none
+  color: $DarkShade-25
+  &__sum
+    color: inherit
+    &::before
+      content: ''
+      position: absolute
+      border: 1px $DarkShade-25 solid
+      border-radius: 10px
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background:  url("../../assets/images/icons/like-icon.svg") no-repeat 5px center
+
+  &:hover
+    opacity: .5
+    cursor: pointer
+
+  input
+    &:checked
+      ~ .like-btn__sum
+        color: $Purple
+
+        &:before
+          border-color: transparent
+          background-image: url("../../assets/images/icons/like--active-icon.svg")
+
+        &:after
+          background:  linear-gradient(white, white)  padding-box, $Purple-gradient border-box
+          position: absolute
+          content: ''
+          top: 0
+          right: 0
+          bottom: 0
+          left: 0
+          z-index: -1
+          border-radius: 10px
+          border: 1px solid transparent
+
+    &:focus-visible
+      ~ .like-btn__sum:before
+        outline: 2px black solid
+
+  &::before
+    @extend %minimalTouchZone
+
+
+
+.bullet-list
+
+  &__item
+
+    &::before
+      content: ''
+      display: inline-block
+      width: 10px
+      height: 10px
+      margin-right: .66rem
+      background-color: $DarkShade-25
+      border-radius: 50%
+
+    & + &
+      margin-top: 10px
+
+

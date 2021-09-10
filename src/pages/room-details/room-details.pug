@@ -1,0 +1,110 @@
+extends ../page-template
+
+include ../../components/header/header
+include ../../components/footer/footer
+
+include ../../components/input-fields/calc-dropdown/calc-dropdown
+include ../../components/input-fields/range-datepicker/range-datepicker
+
+include ../../components/forms/get-room-card/get-room-card
+
+
+block variables
+    -
+        let title = 'Подробно о номере TOXIN',
+            description = 'Подробно о номере TOXIN'
+
+block main
+
+    .room-details
+
+        section.room-details__pics
+            -
+                var srcPath = [ require('@/assets/images/backgrounds/image.jpg'),
+                                require(`@/assets/images/backgrounds/image-2.jpg`),
+                                require('@/assets/images/backgrounds/image-322.jpg'),
+                                require('@/assets/images/backgrounds/2x/image.jpg'),
+                                require(`@/assets/images/backgrounds/2x/image-2.jpg`),
+                                require('@/assets/images/backgrounds/2x/image-322.jpg'),
+                                require('@/assets/images/backgrounds/3x/image-2.jpg'),
+                                require('@/assets/images/backgrounds/3x/image-322.jpg'),
+                                require('@/assets/images/backgrounds/2x/image-mobile.jpg'),
+                                ];
+
+            img.room-details__pics-pic(width='981' height='481' alt='Номер 888 отеля TOXIN' src=srcPath[0] srcset!=`${srcPath[0]} 1000w, ${srcPath[8]} 500w, ${srcPath[3]} 2500w` sizes='(max-width: 512px) 25vw, (max-width: 767px) 100vw, (min-width: 1200px) 980px, (min-width: 768px) 33vw')
+            img.room-details__pics-pic(width='461' height='243' alt='Номер 888 отеля TOXIN' src=srcPath[1] srcset!=`${srcPath[1]} 450w , ${srcPath[4]} 900w, ${srcPath[6]} 1400w` sizes='(max-width: 512px) 900px, (max-width: 767px) 100vw, (min-width: 1200px) 450px, (min-width: 768px) 33vw')
+            img.room-details__pics-pic(width='461' height='243' alt='Номер 888 отеля TOXIN' src=srcPath[2] srcset!=`${srcPath[2]} 450w , ${srcPath[5]} 900w, ${srcPath[7]} 1400w` sizes='(max-width: 512px) 900px, (max-width: 767px) 100vw, (min-width: 1200px) 450px, (min-width: 768px) 33vw')
+
+        section.room-details__info
+            .info-about
+                h2.info__title Сведения о номере
+                ul.bonuses-list
+                    li.bonuses-item
+                        object.bonuses-item__icon(type='image/svg+xml' height='40px' width='40px' data=require('../../assets/images/icons/insert_emoticon.svg'))
+                        span.bonuses-item__title Комфорт
+                        span.bonuses-item__desc Шумопоглощающие стены
+                    li.bonuses-item
+                        object.bonuses-item__icon(type='image/svg+xml' height='40px' width='40px' data=require('../../assets/images/icons/location_city.svg'))
+                        span.bonuses-item__title Удобство
+                        span.bonuses-item__desc Окно в каждой из спален
+                    li.bonuses-item
+                        object.bonuses-item__icon(type='image/svg+xml' height='40px' width='40px' data=require('../../assets/images/icons/whatshot.svg'))
+                        span.bonuses-item__title Уют
+                        span.bonuses-item__desc Номер оснащен камином
+
+            .info-impress
+                h2.info__title Впечатления от номера
+                .info-impress__circle
+                ul.info-impress__list
+                    li.info-impress__list-item Великолепно
+                    li.info-impress__list-item Хорошо
+                    li.info-impress__list-item Удовлетворительно
+                    li.info-impress__list-item Разочарован
+
+            .info-reviews
+                -
+                    const srcSetIconPath = [require('@/assets/images/icons/2x/p_sarafanov.png'),
+                                        require('@/assets/images/icons/2x/979b0f19f131b5d0daf3ad92675001f4.png'),
+                                        require('@/assets/images/icons/3x/p_sarafanov.png'),
+                                        require('@/assets/images/icons/3x/979b0f19f131b5d0daf3ad92675001f4.png'),];
+
+                h2.info__title Отзывы посетителей номера
+                .comment
+                    .comment__avatar
+                        img(width='48' height='48' src=require('@/assets/images/icons/p_sarafanov.png') srcset!=`${srcSetIconPath[0]} 1.5x, ${srcSetIconPath[2]} 2.5x` alt='sarafanov')
+                    span.comment__who Мурад Сарафанов
+                    span.comment__date 5 дней назад
+                    label.like-btn.comment__likes
+                        input.visually-hidden(checked='' type='checkbox')
+                        span.like-btn__sum 12
+                    p.comment__text
+                        | Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены,
+                        | действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
+
+                .comment
+                    .comment__avatar
+                        img(width='48' height='48' src=require('@/assets/images/icons/979b0f19f131b5d0daf3ad92675001f4.png') srcset!=`${srcSetIconPath[1]} 1.5x, ${srcSetIconPath[3]} 2.5x` alt='Ntnz')
+                    span.comment__who Патрисия Стёклышкова
+                    span.comment__date Неделю назад
+                    label.like-btn.comment__likes
+                        input.visually-hidden(type='checkbox')
+                        span.like-btn__sum 2
+                    p.comment__text
+                        | Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать,
+                        | каждый день новое блюдо и десерт как комплимент.
+
+            .info-card
+                +getRoomsCard()
+
+            .info-rules
+                h2.info__title Правила
+                ul.bullet-list
+                    li.bullet-list__item Нельзя с питомцами
+                    li.bullet-list__item Без вечеринок и мероприятий
+                    li.bullet-list__item Время прибытия — после 13:00, а выезд до 12:00
+
+            .info-abort
+                h2.info__title Отмена
+                p.info-abort__text
+                    | Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн.
+                    | до прибытия вы получите полный возврат за вычетом сбора за услуги.

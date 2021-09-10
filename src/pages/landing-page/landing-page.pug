@@ -1,0 +1,19 @@
+extends ../page-template
+
+include ../../components/header/header
+include ../../components/footer/footer
+
+include ../../components/forms/finding-room-card/finding-room-form
+
+
+block variables
+    -
+        var title = 'Гланая страница',
+            description = 'Главная'
+
+
+block main
+    .l-main__form
+        +findRoomsCard()
+
+    p.l-main__text Лучшие номера для вашей работы, отдыха и просто вдохновения

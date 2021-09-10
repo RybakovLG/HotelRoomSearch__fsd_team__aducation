@@ -1,0 +1,29 @@
+include ../../baseComponents
+include ../../input-fields/calc-dropdown/calc-dropdown
+include ../../input-fields/range-datepicker/range-datepicker
+
+mixin getRoomsCard()
+    form.get-room-form.form-card(action='#')
+        span.room-desc
+            span(class='room-desc__num --lux') 888
+            span.room-desc__price 9 990₽
+
+        +datesDropdowns()
+
+        +calcDropdown('people')
+
+        ul.get-room-form__calc
+            li
+                span 9 990₽ х 4 суток
+                span 39 960₽
+            li
+                span(class='--info-btn' title='Скидка инвалидам') Сбор за услуги: скидка 2 179₽
+                span 0₽
+            li
+                span(class='--info-btn' title='Не спрашивайте, ладно?') Сбор за дополнительные услуги
+                span 300₽
+            li.sum
+                span(class='--underline-after') Итого
+                span 38 081₽
+
+        +button('забронировать','--finish')

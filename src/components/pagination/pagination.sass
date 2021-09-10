@@ -1,0 +1,60 @@
+
+.simple-pagination
+  display: inline-block
+  color: $DarkShade-50
+  overflow: hidden
+  font-weight: 400
+  @extend %labelSizeFont
+
+  .disabled
+    display: none
+
+  li
+    height: 40px
+    width: 40px
+    line-height: 40px
+    text-align: center
+    list-style: none
+    float: left
+    &.active
+      font-weight: 700
+      color: white
+      border-radius: 50%
+      background: $Purple-gradient
+      cursor: pointer
+      &:hover
+        color: $DarkShade-50
+
+.page-link,
+.current,
+.ellipse
+  display: inline-block
+  width: 100%
+  border-radius: 50%
+  user-select: none
+  &:hover
+    background: $Purple-gradient--50
+    font-weight: bold
+
+.page-link
+  &.next
+    color: transparent
+    position: relative
+    background: $Green-gradient
+    &:after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background: url("../../assets/images/icons/arrow_forward--white.svg") no-repeat center/18px
+    &:hover
+      background: $Green-gradient--50
+
+span.ellipse.clickable
+  cursor: pointer
+
+.ellipse input
+  width: 3em
+  outline: 0

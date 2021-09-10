@@ -1,0 +1,83 @@
+.nav
+    display: flex
+    height: 100%
+    align-items: center
+    gap: 20px
+
+    &__item
+        position: relative
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: space-between
+        cursor: pointer
+        color: $DarkShade-50
+        >*
+            padding: .5em 0
+            &::before
+                @extend %minimalTouchZone
+
+        &:hover, &.--hover, &:focus-within
+            color: $DarkShade-75
+            font-weight: 700
+            &.--expand
+                .nav-expand-list
+                    display: flex
+
+        &::after
+            content: attr(data-text)
+            height: 0
+            visibility: hidden
+            overflow: hidden
+            user-select: none
+            pointer-events: none
+            font-weight: 700
+
+        &.--expand
+            padding-right: 1.5em
+            background: url("../../assets/images/icons/expand_icon.svg") no-repeat calc(100% - 4px) 55%/1em
+
+.nav-expand-list
+    position: absolute
+    background: white
+    left: 0
+    top: 100%
+    //min-width: 100%
+    display: none
+    flex-direction: column
+    z-index: 1
+    padding: 0
+
+    &__item
+        white-space: nowrap
+        font-weight: initial
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: space-between
+        &::after
+            content: attr(data-text)
+            height: 0
+            visibility: hidden
+            overflow: hidden
+            user-select: none
+            pointer-events: none
+            font-weight: 700
+        >*
+            display: block
+            padding: .5em 1em
+            &:hover, &:focus-visible
+                font-weight: 700
+
+.nav-burger
+    display: flex
+    white-space: nowrap
+    //font-weight: 700
+    align-items: center
+    position: relative
+    padding-left: calc(20px + 2em)
+    >*
+        position: absolute
+        left: 1em
+        width: 2em
+        height: 2em

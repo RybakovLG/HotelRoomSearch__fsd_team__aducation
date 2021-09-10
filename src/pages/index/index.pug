@@ -1,0 +1,25 @@
+extends ../page-template
+
+block variables
+  -
+      const title = 'Навигация по страница',
+           description = 'Ссылки на страницы MetaLamp';
+
+
+block main
+    -
+        const pages = [
+            // { link: 'ui-kit', name:'UI-KIT'},
+            { link: 'landing-page', name:'Стартовая страница'},
+            { link: 'registration-page', name:'Регистрация'},
+            { link: 'sign-in-page', name:'Войти'},
+            { link: 'search-room', name:'Поиск номеров'},
+            { link: 'room-details', name:'Детально о номере'},
+        ];
+
+
+    ul.pages-list
+        h1 #pages
+        each page in pages
+          li
+            a.pages-list__link(href=`${page.link}.html`)=page.name

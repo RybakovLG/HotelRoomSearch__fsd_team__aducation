@@ -1,0 +1,17 @@
+include ../../baseComponents
+
+mixin datesDropdowns()
+    fieldset.dates-dropdowns
+        .js-range-datepicker
+            div
+                label.title-label прибытие
+                +input-field("--dropdown datepicker-input", {'readonly':'', 'placeholder':'ДД.ММ.ГГГГ', 'name':'start'})
+            div
+                label.title-label ВЫЕЗД
+                +input-field("--dropdown datepicker-input", {'readonly':'', 'placeholder':'ДД.ММ.ГГГГ', 'name':'end'})
+
+mixin soloDatesDropdowns()
+    fieldset.dates-dropdowns
+        div
+            label.title-label даты пребывания в отеле
+            +input-field("--dropdown js-range-datepicker", {'readonly':'', 'placeholder':'Нажать для выбора'})

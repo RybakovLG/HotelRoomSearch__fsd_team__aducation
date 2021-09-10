@@ -1,0 +1,10 @@
+include ../../baseComponents
+include ../../input-fields/calc-dropdown/calc-dropdown
+include ../../input-fields/range-datepicker/range-datepicker
+
+mixin findRoomsCard()
+    form.find-room-forms.form-card(action='#')
+        h1 Найдём номера под ваши пожелания
+        +datesDropdowns()
+        +calcDropdown('rooms')
+        +button('подобрать номер','--finish')

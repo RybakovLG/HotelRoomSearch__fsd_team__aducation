@@ -1,0 +1,83 @@
+@import "../baseStyleForm"
+.get-room-form
+  &__calc
+    & > li
+      display: flex
+      justify-content: space-between
+      line-height: 18px
+      &:not(.sum)
+        gap: 10px
+
+      .--info-btn
+        flex: 0 1 240px
+        padding-right: 25px
+        position: relative
+
+        &::after
+          content: 'i'
+          position: absolute
+          font-weight: bold
+          color: $DarkShade-25
+          font-size: 12px
+          line-height: 20px
+          text-align: center
+          top: 0
+          right: 0
+          width: 20px
+          height: 20px
+          border: 1px solid $DarkShade-25
+          border-radius: 50%
+
+        &:hover
+          &::after
+            color: $DarkShade-50
+            border-color: $DarkShade-50
+    > li + li
+      margin-top: 18px
+
+  .room-desc
+    display: flex
+    justify-content: space-between
+    align-items: baseline
+
+    &__num
+      @extend %widgetTitleSizeFont
+      &:before
+        content: '№ '
+        font-size: 14px
+        line-height: 17px
+
+      &.--lux
+        &:after
+          content: 'люкс'
+          margin-left: .7em
+          @extend %labelSizeFont
+          color: $Purple
+          user-select: auto
+
+    &__price
+      font-weight: 700
+      color: $DarkShade-50
+      &:after
+        content: ' в сутки'
+        font-weight: initial
+        font-size: 12px
+
+  .sum
+    margin-top: 30px
+    @extend %itemTitleSizeFont
+    font-size: 20px
+    line-height: 1.2
+
+    .--underline-after
+      flex-grow: 1
+      display: inline-flex
+      &:after
+        content: ''
+        margin: 0 .1em
+        flex-grow: 1
+        height: calc(100% - .2em)
+        border-bottom: 1px dotted $DarkShade-25
+
+  & >:last-child
+    margin-top: 20px

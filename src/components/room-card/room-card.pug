@@ -1,0 +1,35 @@
+include ../baseComponents
+
+mixin cardRoom(data)
+    -
+        let extraClass = !!data.isLux ? '--lux' : ''
+
+    .room-card(class!=extraClass)
+        a.room-card__link.no-text-link(href='room-details.html') Room TOXIN hotel
+        .room-card__img
+
+            .glider-contain
+                .glider
+                    - for (let i = 0; i < 4; i++)
+                    img(width='271' height='152' src=data.imgPath srcset!=`${data.img2xPath} 1.5x, ${data.img2xPath} 2x, ${data.img3xPath} 3x` alt=`Номер ${data.numRoom} отеля TOXIN`)
+
+                button.glider-btn-prev(aria-label='Previous')
+                button.glider-btn-next(aria-label='Next')
+                .dots(role='tablist')
+
+        .room-card__info
+            .room-desc
+                span.room-desc__num(class!=extraClass) !{data.numRoom}
+                span.room-desc__price !{data.price}&#x20BD;
+            div
+                .br-wrapper.stars-rating
+                    select.stars-rating__select(style='display: none;')
+                        for i in [1,2,3,4,5]
+
+                            if i === +data.rating
+                                option(selected value=i) !{i}
+                            else
+                                option(value=i) !{i}
+                span
+                    b !{data.sumReviews}
+                    |  отзывов

@@ -1,0 +1,62 @@
+
+.l-main
+  display: grid
+  align-items: center
+  justify-content: center
+  background: url("../../assets/images/backgrounds/image-3.jpg") no-repeat center/cover
+  height: 100vh
+  width: 100%
+
+  @media (max-width: 1025px) and (min-width: 514px)
+    background-image: url("../../assets/images/backgrounds/image-3-tablet.jpg")
+
+  @media (max-width: 513px)
+    background-image: url("../../assets/images/backgrounds/image-3-mobile.jpg")
+
+
+.pages-list
+  background: rgba(255, 255, 255 , .8)
+  padding: 1em
+  border-radius: 10px
+  position: relative
+  transition: all 250ms
+  &:hover
+    transform: scale(1.5, 1.5)
+    @extend %shadow
+  &>*
+    border-radius: 8px
+
+    &:hover
+      transition: all 250ms
+      background: $Green-gradient--50
+      color: $DarkShade-75
+      transform: scale(1.25, 1.25)
+      @extend %shadow
+
+  h1
+    position: absolute
+    left: -1.5em
+    top: 2em
+    border-radius: 4px
+    writing-mode: vertical-lr
+    background: $Purple-gradient--50
+    opacity: .8
+    user-select: none
+    padding: .25em 0
+    font-weight: 700
+    font-size: 1em
+    color: inherit
+    &:hover
+      background: $Green-gradient--50
+
+.pages-list__link
+  display: block
+  padding: 1em 2em
+  color: $DarkShade-50
+  border-radius: 8px
+  text-align: center
+  transition: all 250ms
+  font-weight: 700
+  font-style: italic
+  font-size: 12px
+  text-transform: uppercase

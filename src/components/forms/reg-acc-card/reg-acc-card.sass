@@ -1,0 +1,125 @@
+@import "../baseStyleForm"
+
+.reg-account-form
+
+  input:not(:last-child)
+    margin-bottom: 10px
+
+.group-radio-btn
+  display: flex
+  gap: 20px
+  >*
+    flex: 0 0 102px
+
+.radio-btn
+  position: relative
+  padding-left: 30px
+  color: $DarkShade-50
+  cursor: pointer
+  user-select: none
+
+  input
+    &:checked
+      ~ .radio-btn__custom
+        border-color: $Purple
+      ~ .radio-btn__custom::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        border-radius: 50%
+        border: 3px solid transparent
+        background: $Purple-gradient padding-box
+
+    &:focus-visible
+      ~ .radio-btn__custom
+        outline: 2px black solid
+
+  &:hover
+    font-weight: 700
+    .radio-btn__custom
+      border-color: $DarkShade-50
+    input:checked ~ .radio-btn__custom
+      opacity: .8
+  &::before
+    @extend %minimalTouchZone
+
+.radio-btn__custom
+  position: absolute
+  left: 0
+  top: 50%
+  transform: translateY(-50%)
+  width: 20px
+  height: 20px
+  border: 1px $DarkShade-25 solid
+  border-radius: 50%
+
+.toggle-btn
+  position: relative
+  padding-left: 50px
+  cursor: pointer
+  color: $DarkShade-75
+  display: inline-block
+  user-select: none
+
+  input
+    &:checked ~ .toggle-btn__custom
+      border-color: $Purple
+      &::before
+        transition: .2s
+        transform: translateX(20px)
+        background: $Purple-gradient
+    &:focus-visible
+      ~ .toggle-btn__custom
+        outline: 2px black solid
+  &:hover
+    font-weight: 700
+    .toggle-btn__custom
+      opacity: .5
+  &::before
+    @extend %minimalTouchZone
+
+.toggle-btn__custom
+  position: absolute
+  left: 0
+  top: 0
+  bottom: 0
+  margin: auto
+  width: 40px
+  height: 20px
+  border: 1px $DarkShade-25 solid
+  border-radius: 10px
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 3px
+    bottom: 0
+    margin: auto
+    width: 12px
+    height: 12px
+    border-radius: 50%
+    background: linear-gradient($DarkShade-25, $DarkShade-25)
+    transition: .2s
+
+.have-acc
+  display: inline-flex
+  align-items: center
+  gap: .5em
+  justify-content: space-between
+  width: 100%
+  &__text
+    &:hover
+      opacity: .5
+
+@include media-breakpoint-down(sm)
+  h1
+    text-align: center
+
+  .have-acc
+    flex-direction: column
+
+
+

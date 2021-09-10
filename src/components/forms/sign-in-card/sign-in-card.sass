@@ -1,0 +1,22 @@
+@import "../baseStyleForm"
+
+.enter-acc-form
+  .text-field + .text-field
+    margin-top: 10px
+
+  .have-acc
+    display: inline-flex
+    align-items: center
+    justify-content: space-between
+    gap: .5em
+    width: 100%
+    &__text
+      &:hover
+        opacity: .5
+
+  @include media-breakpoint-down(sm)
+    h1
+      text-align: center
+
+    .have-acc
+      flex-direction: column

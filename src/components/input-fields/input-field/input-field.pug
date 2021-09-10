@@ -1,0 +1,6 @@
+
+mixin input-field(extraClass, attr)
+    input.text-field(class=extraClass)&attributes(attr)
+
+mixin inputSummary(extraClass, text)
+    summary(class='text-field --dropdown' class!=extraClass)!= text

@@ -1,0 +1,6 @@
+
+mixin button(nameBtn, extraClass, type)
+    button.button-base(class=extraClass type=type)= nameBtn
+
+mixin linkButton(nameBtn, extraClass, link)
+    a.button-base(class!=extraClass href!=link)!= nameBtn

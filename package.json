@@ -1,0 +1,40 @@
+{
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.2.0",
+    "css-minimizer-webpack-plugin": "^3.0.2",
+    "cssnano": "^5.0.8",
+    "file-loader": "^6.2.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.2",
+    "html-webpack-pug-plugin": "^3.0.0",
+    "image-minimizer-webpack-plugin": "^2.2.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-svgo": "^9.0.0",
+    "mini-css-extract-plugin": "^2.2.0",
+    "pug": "^3.0.2",
+    "pug-loader": "^2.4.0",
+    "sass": "^1.37.5",
+    "sass-loader": "^12.1.0",
+    "sass-resources-loader": "^2.2.4",
+    "style-loader": "^3.2.1",
+    "terser-webpack-plugin": "^5.2.3",
+    "webpack": "^5.49.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^4.0.0"
+  },
+  "scripts": {
+    "b": "cross-env NODE_ENV=production webpack --mode production",
+    "d": "cross-env NODE_ENV=development webpack --mode development",
+    "w": "cross-env NODE_ENV=development webpack serve"
+  },
+  "dependencies": {
+    "ion-rangeslider": "^2.3.1",
+    "jquery": "^3.6.0",
+    "jquery-bar-rating": "^1.2.2",
+    "normalize.css": "^8.0.1",
+    "trim-newlines": "^4.0.2",
+    "vanillajs-datepicker": "^1.1.4"
+  }
+}

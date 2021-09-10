@@ -1,0 +1,47 @@
+
+.button-base
+    @extend %labelSizeFont
+    position: relative
+    color: white
+    padding: 15px 20px
+    border: none
+    border-radius: 22px
+    background: $Purple-gradient
+    cursor: pointer
+
+    &:hover,
+    &.--hover
+        background: $Purple-gradient--50
+        &.--empty
+            background: linear-gradient(white,white) padding-box, $Purple-gradient--50 border-box
+
+    &.--empty
+        background: linear-gradient(white,white) padding-box, $Purple-gradient border-box
+        border: 2px solid transparent
+        padding: 13px 18px
+        color: $Purple
+        &:hover,
+        &.--hover
+            opacity: .8
+
+    &.--finish
+        width: 100%
+        &:after
+            content: ''
+            position: absolute
+            top: 0
+            right: 0
+            bottom: 0
+            left: 0
+            background: url("../../assets/images/icons/arrow_forward--white.svg") no-repeat calc(100% - 12px) center
+
+    &.--mini
+        padding: 0
+        background: none
+        color: $Purple
+        &:hover
+            color: $DarkShade-50
+
+        &::before
+            @extend %minimalTouchZone
+

@@ -1,0 +1,89 @@
+extends ../page-template
+
+include ../../components/header/header
+include ../../components/footer/footer
+
+include ../../components/input-fields/calc-dropdown/calc-dropdown
+include ../../components/input-fields/range-datepicker/range-datepicker
+include ../../components/input-fields/range-slider/range-slider
+include ../../components/list-check/list-check
+include ../../components/pagination/pagination
+include ../../components/room-card/room-card
+
+
+block variables
+    -
+        let title = 'Поиск номеров TOXIN',
+            description = 'Найти номера быстро'
+
+block main
+
+    section.search-room
+        details.search-room__filter(open)
+            +inputSummary('--check-list, search-room__filter-toggle', 'фильтр')
+            form.filter
+                fieldset.filter__dates
+                    +soloDatesDropdowns()
+
+                fieldset.filter__guests
+                    +calcDropdown('people')
+
+                fieldset.filter__prise-range
+                    +rangeSlider()
+
+                fieldset.filter__room-rules
+                    +listCheck([
+                        'Можно курить','Можно с питомцами',
+                        'Можно пригласить гостей (до&nbsp;10&nbsp;человек)'
+                    ])
+                fieldset.filter__avail
+                    +listRichCheck({
+                      'Широкий коридор':'Ширина коридоров в номере не&nbsp;менее 91 см.',
+                      'Помощник для инвалидов':'На 1 этаже вас встретит специалист и&nbsp;проводит до номера.'
+                    })
+                fieldset.filter__room-fasil
+                    +calcDropdown('rooms')
+
+                fieldset.filter__room-extra-fasil
+                    +listExpandCheck([
+                        'Завтрак',
+                        'Письменный стол',
+                        'Стул для кормления',
+                        'Кроватка',
+                        'Телевизор',
+                        'Шампунь',
+                    ],
+                      'дополнительные удобства')
+
+        section.search-room__list
+
+            h1.search-room__title Номера, которые мы для вас подобрали
+            ul.room-list
+                -
+                    function getRandom(min, max) {
+                        min = Math.ceil(min);
+                        max = Math.floor(max);
+                        return Math.floor(Math.random() * (max - min + 1)) + min;
+                    }
+
+                    function MyRound100(val) {
+                        return Math.round(val / 100) * 100;
+                    }
+
+
+                - let cardNums = 12;
+                    while cardNums-- > 0
+                        li.room-list__item
+                            +cardRoom({
+                              numRoom: getRandom(333, 999),
+                              isLux: getRandom(0, 1),
+                              price: MyRound100(getRandom(5555, 15000)),
+                              rating: getRandom(1, 5),
+                              sumReviews: getRandom(51, 501),
+                              imgPath: require(`@/assets/images/miniRooms/image-${cardNums + 1}.jpg`),
+                              img2xPath: require(`@/assets/images/miniRooms/2x/image-${cardNums + 1}.jpg`),
+                              img3xPath: require(`@/assets/images/miniRooms/3x/image-${cardNums + 1}.jpg`),
+                            })
+
+            .room-list__pagination
+                +paginationRow()

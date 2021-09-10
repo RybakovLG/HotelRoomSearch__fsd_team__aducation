@@ -1,0 +1,122 @@
+
+.footer
+   padding-top: 100px
+   background-color: white
+   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05)
+
+   &,
+   &__bottom
+      position: relative
+      &::before
+         position: absolute
+         content: ''
+         top: 0
+         left: 50%
+         transform: translate(-50%)
+         height: 1px
+         width:  min(100vw, 1440px)
+         background: $DarkShade-10 padding-box
+
+   &__main
+      padding-bottom: 100px
+      display: none
+   p
+      margin-top: 20px
+
+   .logo-toxin
+      width: 106px
+      height: 40px
+      > *
+         width: inherit
+         height: inherit
+      &:hover
+         opacity: .5
+
+   a:hover
+      font-weight: 700
+
+   &__bottom
+      min-height: 70px
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+      .social-links
+         > *
+            float: left
+            width: 24px
+            height: 24px
+            &:hover
+               opacity: .5
+         > * + *
+            margin-left: 20px
+         a
+            display: block
+            height: inherit
+
+      .logo-toxin
+         display: none
+
+   &__nav-list
+      white-space: nowrap
+      a::after
+         @extend %minimalTouchZone
+      li
+         color: $DarkShade-50
+
+   @include media-breakpoint-down(md)
+      padding-top: 0
+      &__bottom
+         padding-top: 120px
+         padding-bottom: 120px
+         flex-direction: column
+         gap: 20px
+         span
+            text-align: center
+      .logo-toxin
+         display: block
+      .social-links
+         margin-top: 10px
+
+   @include media-breakpoint-up(md)
+      &__main
+         display: flex
+         flex-wrap: nowrap
+         justify-content: space-between
+         gap: 40px
+         > *
+            min-width: 151px //для стабилизации ховера с болд эффектом
+
+      &__promo,
+      &__nav-list,
+      &__subscription
+         * + *
+            margin-top: 20px
+
+      &__promo,
+      &__subscription
+         flex: 0 1 260px
+
+   @include media-breakpoint-between(md, xl)
+      &__main
+         flex-wrap: wrap
+         justify-content: space-evenly
+
+      &__promo,
+      &__nav-list,
+      &__subscription
+         * + *
+            margin-top: .75em
+
+      &__subscription, &__promo
+         order: -1
+         flex: 0 1 45%
+
+   @include media-breakpoint-down(sm)
+      &__bottom
+         padding: 30px 0
+
+.social-link
+   position: relative
+   &::after
+      @extend %minimalTouchZone

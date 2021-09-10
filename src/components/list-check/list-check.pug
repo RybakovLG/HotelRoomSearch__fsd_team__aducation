@@ -1,0 +1,38 @@
+include ../baseComponents
+
+mixin listCheck(itemsArr)
+    .list-checkboxes
+        h3.title-label.title-label--hi правила дома
+        ul.check-box-list
+
+           each li in itemsArr
+             li.check-box-list__item
+                 label.check-box!= li
+                    input(class='visually-hidden' type='checkbox')
+                    span.check-box__custom
+
+
+mixin listRichCheck(itemsObj)
+    .list-checkboxes
+        h3.title-label.title-label--hi доступность
+        ul.check-box-list
+
+          each desc, li in itemsObj
+              li.check-box-list__item
+                  label.check-box.check-box--rich!= li
+                      input(class='visually-hidden' type='checkbox')
+                      span.check-box__custom
+                      .check-box__desc!= desc
+
+
+mixin listExpandCheck(itemsArr, inputText)
+
+    details.expandable-list
+        +inputSummary('--check-list', inputText)
+        ul.check-box-list
+
+          each li in itemsArr
+              li.check-box-list__item
+                  label.check-box!= li
+                      input(class='visually-hidden' type='checkbox')
+                      span.check-box__custom

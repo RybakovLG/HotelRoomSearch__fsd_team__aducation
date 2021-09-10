@@ -1,0 +1,47 @@
+.text-field.--dropdown {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #575871;
+}
+
+* {
+  outline: 1px solid #c7c7d0 !important;
+}
+
+.text-field {
+  height: 44px;
+  border: 1px #c7c7d0 solid;
+  border-radius: 4px;
+  width: 100%;
+  padding: 0 40px 0 15px;
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+.text-field::placeholder {
+  color: #c7c7d0;
+}
+.text-field:hover, .text-field:focus, .text-field.--onFocus {
+  border-color: #8f90a0;
+  outline: 0;
+}
+.text-field.--subscription {
+  background: url("../../../assets/icons/arrow_forward_subscription.svg") no-repeat calc(100% - 15px) center;
+}
+.text-field.--onFocus::placeholder {
+  color: #575871;
+}
+.text-field.--dropdown {
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  background: white url("../../../assets/icons/expand_icon.svg") no-repeat calc(100% - 15px) center;
+}
+.text-field.--dropdown::placeholder {
+  color: #575871;
+}
+
+/*# sourceMappingURL=input-field.css.map */

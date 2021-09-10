@@ -1,0 +1,87 @@
+
+.dropdown
+  position: relative
+  .exp-list__buttons
+    display: flex
+    justify-content: space-between
+    margin-top: 20px
+
+  &__expand-check
+    &:checked
+      ~ .text-field
+        border-bottom-left-radius: 0
+        border-bottom-right-radius: 0
+        border-color: $DarkShade-50
+        border-bottom-color: transparent
+        @extend %shadow
+
+      ~ .--dropdown
+        background-image: url("../../../assets/images/icons/expand_more.svg")
+
+      ~ .dropdown__exp-list
+        @extend %shadow
+        display: revert
+
+  &:focus
+    ~ .text-field
+      border-color: $DarkShade-50
+
+  &__exp-list
+    background: white
+    display: none
+    position: absolute
+    border: 1px solid $DarkShade-50
+    border-bottom-left-radius: 4px
+    border-bottom-right-radius: 4px
+    left: 0
+    right: 0
+    top: calc(100% - 1px)
+    padding: 7px 7px 7px 15px
+    z-index: 1
+    margin: 0
+    @extend %shadow
+
+  li:not(:last-child)
+    margin-bottom: 7px
+
+.exp-list__item
+  @extend %labelSizeFont
+  line-height: 30px
+
+.exp-list__count
+  float: right
+  display: inline-block
+
+.count__input
+  padding: 0
+  outline: none
+  text-align: center
+  width: 2em
+  font: inherit
+  border: 0
+
+.count__btn-minus,
+.count__btn-plus
+  box-sizing: border-box
+  vertical-align: bottom
+  position: relative
+  cursor: pointer
+  width: 30px
+  height: 30px
+  border: 1px solid $DarkShade-25
+  color: $DarkShade-50
+  border-radius: 50%
+  background: none
+  font-size: 18px
+  transition: 200ms transform
+  &:hover:not(&:disabled)
+    background: $DarkShade-25
+    color: $DarkShade-5
+    border: none
+    transform: rotateZ(360deg)
+  &:disabled
+    color: $DarkShade-25
+    border-color: $DarkShade-5
+  &::before
+    @extend %minimalTouchZone
+

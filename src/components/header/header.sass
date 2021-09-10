@@ -1,0 +1,138 @@
+
+.header
+   background: white
+   display: inline-flex
+   gap: 20px
+   justify-content: flex-end
+   align-items: center
+   width: 100%
+   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05)
+   height: 70px
+
+   &__login-area
+      display: flex
+      gap: inherit
+      align-items: inherit
+
+   &__logo
+      width: 106px
+      height: 40px
+      margin-right: auto
+      background: url("../../assets/images/icons/Logo.svg") no-repeat center/contain
+      
+      & > *
+         width: inherit
+         height: inherit
+      &:hover
+         opacity: .5
+
+   &__nav
+      position: relative
+
+   .button-base,
+   .button-base.--empty
+      padding-top: 10px
+      padding-bottom: 10px
+
+   .login-btn
+      display: block
+      position: relative
+      height: 35px
+      width: 35px
+      padding: .5em
+      color: white
+      cursor: pointer
+      border-radius: 50%
+      background: $DarkShade-50
+      &:hover, &:focus
+         background: $DarkShade-25
+      >*
+         vertical-align: middle
+         width: 1.5em
+         height: 1.5em
+      &::before
+         @extend %minimalTouchZone
+
+   &__vertical-line
+      color: transparent
+      user-select: none
+      display: block
+      width: 1px
+      height: 2em
+      background: $DarkShade-10
+
+   .login-name-link,
+   &__vertical-line,
+   .nav-burger,
+   .login-btn
+      display: none
+
+
+   @include media-breakpoint-down(lg)
+      &__nav
+         &:focus-within
+            .nav
+               visibility: visible
+
+      .nav-burger
+         display: flex
+         padding-left: calc(20px + 2em)
+         cursor: pointer
+
+      .nav
+         flex-direction: column
+         gap: 0
+         position: absolute
+         left: 0
+         z-index: 1
+         background-color: white
+         height: auto
+         visibility: hidden
+
+         .nav__item
+            >*
+               min-width: 130px
+               padding: .5em 0 .5em 1em
+               align-self: flex-start
+         .nav__item, a
+            width: 100%
+
+         .nav-expand-list
+            position: absolute
+            top: 0
+            left: unset
+            right: 100%
+            padding: 0
+            //min-width: 115px
+
+
+   @include media-breakpoint-down(md)
+      &
+         gap: 10px
+
+      .login-btn
+         display: block
+
+      .header__btn
+         display: none
+
+      .header__vertical-line
+         display: block
+
+
+   &.header--login
+      .header__btn
+         display: none
+      .login-name-link
+         display: flex
+         padding: .5rem 0
+      .header__vertical-line
+         display: block
+      .login-btn
+         background: $Purple-gradient
+         &:hover, &:focus
+            background: $Purple-gradient--50
+
+      @include media-breakpoint-down(md)
+         .login-name-link
+            display: none

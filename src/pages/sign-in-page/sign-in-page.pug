@@ -1,0 +1,19 @@
+extends ../page-template
+
+include ../../components/header/header
+include ../../components/footer/footer
+
+include ../../components/forms/sign-in-card/sign-in-card
+
+
+
+block variables
+    -
+        let title = 'Войти в аккаунт TOXIN отеля',
+            description = 'Страница входа в аккаунт отеля TOXIN'
+
+
+block main
+    .l-main__form
+        +enterAccCard()
+

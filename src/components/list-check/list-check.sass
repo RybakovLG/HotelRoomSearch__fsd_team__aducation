@@ -1,0 +1,80 @@
+
+.check-box-list
+  width: 100%
+
+  &__item:not(:last-child)
+    margin-bottom: 5px
+
+//CHECKBOX-----------------
+
+.check-box
+  display: inline-block
+  position: relative
+  padding-left: 30px
+  color: $DarkShade-50
+  cursor: pointer
+  line-height: 20px
+  transition: font-weight 100ms
+  &:hover
+    font-weight: 700
+
+    .check-box__custom
+      border-color: $DarkShade-50
+    input:checked ~ .check-box__custom
+      opacity: .8
+
+  input
+    &:checked ~ .check-box__custom
+      border-color: $Purple
+      background: url("../../assets/images/icons/chckbox--checked_icon.svg") no-repeat center 40%
+
+    &:focus-visible
+      ~ .check-box__custom
+        outline: 2px black solid
+
+  &__custom
+    position: absolute
+    left: 0
+    top: 0
+    width: 20px
+    height: 20px
+    border: 1px $DarkShade-25 solid
+    border-radius: 4px
+  &::before
+    @extend %minimalTouchZone
+
+  &--rich
+    font-weight: bold
+    color: $DarkShade-75
+    &:hover
+      color: $DarkShade-50
+
+  &__desc
+    font-size: 12px
+    line-height: 14px
+    font-weight: initial
+    color: $DarkShade-50
+    margin-top: 5px
+    margin-bottom: 0
+
+//expandable-list-----------------------
+
+.expandable-list
+  position: relative
+
+  &[open]
+    .--dropdown
+      background-image: url(../../assets/images/icons/expand_more.svg)
+
+  &:focus-visible
+    outline: 2px solid
+
+  .--check-list
+    border: none
+    padding: 0
+    @extend %labelSizeFont
+    &:hover
+      color: $DarkShade-50
+
+  .check-box-list
+    //position: absolute

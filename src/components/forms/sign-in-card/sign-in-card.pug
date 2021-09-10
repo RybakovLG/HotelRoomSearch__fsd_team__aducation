@@ -1,0 +1,12 @@
+include ../../baseComponents
+
+mixin enterAccCard()
+    form.enter-acc-form.form-card(action='#')
+        h1 Войти
+        fieldset
+            +input-field('', {placeholder: 'Имя'})
+            +input-field('', {placeholder: 'Фамилия'})
+        +button('войти', '--finish', 'submit')
+        fieldset.have-acc
+            a.have-acc__text(href='#enter') Нет аккаунта на Toxin?
+            +linkButton('создать', '--empty', '#create')

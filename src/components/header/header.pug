@@ -1,0 +1,19 @@
+include ../navbar/navbar
+include ../baseComponents
+
+block header
+    header.header
+        a.header__logo.no-text-link(href='../index.html') TOXIN site
+        nav.header__nav
+            +navbar()
+        .header__login-area
+            +button('войти','--empty header__btn')
+            +button('зарегистрироваться', 'header__btn')
+            .header__vertical-line |
+            a.login-name-link.nav__item(href='#' data-text='Юлий Цезарь') Юлий Цезарь
+            button.login-btn
+                svg(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' role='images' width='16px' height='16px' preserveAspectRatio='xMidYMid meet' viewBox='0 0 16 16')
+                    rect(x='0' y='0' width='16' height='16' fill='none' stroke='none')
+                    g(fill='currentColor')
+                        path(d='M11 6a3 3 0 1 1-6 0a3 3 0 0 1 6 0z')
+                        path(fill-rule='evenodd' d='M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z')

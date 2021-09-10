@@ -1,0 +1,92 @@
+
+//MAIN
+
+html
+    box-sizing: border-box
+
+*,
+*:before,
+*:after
+    box-sizing: inherit
+
+body
+    font-family: Montserrat, Verdana, Geneva, sans-serif
+    @extend %mainSizeFont
+
+h1
+    @extend %widgetTitleSizeFont
+    margin: 0
+    @include media-breakpoint-down(sm)
+        font-size: 20px
+        line-height: normal
+
+h2
+    @extend %itemTitleSizeFont
+    margin: 0
+
+h3
+    @extend %labelSizeFont
+    margin: 0
+
+ul
+    padding: 0
+    margin: 0
+    >li
+        list-style: none
+
+a
+    text-decoration: none
+    white-space: nowrap
+    position: relative
+    &:visited,
+    &:link,
+    &:active
+        color: inherit
+
+fieldset
+    margin: 0
+    padding: 0
+    border: none
+
+button
+    border: none
+    background-color: transparent
+
+//VISUALLY CLASSES---------------------------
+
+.visually-hidden
+    position: absolute !important
+    clip: rect(1px 1px 1px 1px)
+    clip: rect(1px, 1px, 1px, 1px)
+    padding: 0 !important
+    border: 0 !important
+    height: 1px !important
+    width: 1px !important
+    overflow: hidden
+
+.visibility-hidden
+    visibility: hidden
+
+.static-pos
+    position: static
+    user-select: none
+    pointer-events: none
+    &.datepicker-dropdown
+        position: static
+        padding-top: 0
+
+//BASIC CLASSES----------------------------
+
+.title-label
+    @extend %labelSizeFont
+    display: block
+    margin-bottom: 5px
+    &--hi
+        margin-bottom: 16px
+
+.no-text-link
+    font-size: 0
+    &:visited,
+    &:link,
+    &:active
+        font-size: 0

@@ -1,0 +1,73 @@
+.range-slider
+  box-sizing: border-box
+  position: relative
+  &__info
+    position: absolute
+    top: 0
+    right: 0
+  &__desc
+    margin-top: 14px
+  &__desc,
+  &__info
+    color: $DarkShade-50
+    font-weight: 400
+    text-transform: unset
+    @extend %labelSizeFont
+
+.irs
+  position: relative
+  display: block
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  font-size: 12px
+  font-family: Arial, sans-serif
+  height: 10px
+
+.irs-line
+  position: relative
+  display: block
+  height: 6px
+  border: 1px solid rgba(31, 32, 65, 0.25)
+  border-radius: 3px
+  overflow: hidden
+  outline: none !important
+  cursor: pointer
+
+.irs-bar
+  position: absolute
+  display: block
+  left: 0
+  top: 0
+  height: 6px
+  width: 0
+  background: $Green-gradient
+  cursor: pointer
+
+.irs-handle
+  position: absolute
+  display: block
+  height: 14px
+  width: 14px
+  background: $Green-gradient
+  border: 2px solid #FFFFFF
+  border-radius: 50%
+  cursor: pointer
+  top: -4px
+  left: 0
+  &:hover, &:focus-within
+    background: $Green-gradient
+    border-color: $DarkShade-75
+  &::after
+    position: absolute
+    border-radius: 50%
+    content: ''
+    left: 50%
+    top: 50%
+    width: 44px
+    height: 44px
+    transform: translate(-50%, -50%)
+
+

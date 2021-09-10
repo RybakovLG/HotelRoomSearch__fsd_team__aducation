@@ -1,0 +1,16 @@
+.l-main {
+  padding-top: 70px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.l-main__text {
+  align-self: flex-end;
+  max-width: 300px;
+  text-align: end;
+}
+
+/*# sourceMappingURL=search-room.css.map */

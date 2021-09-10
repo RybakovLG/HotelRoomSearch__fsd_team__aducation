@@ -1,0 +1,23 @@
+include ../../baseComponents
+
+mixin calcDropdown(type)
+    -
+       let data;
+       if (type === 'people') { data = {title: 'гости', id: 'ui-dropD-for-peoples',extraClass: '--for-people' , label: 'Сколько гостей', list: ['взрослые', 'дети', 'младенцы'],}};
+       if (type === 'rooms') { data = {title: 'удобства номера', id: 'dropD-for-rooms', extraClass: '', label: '2 спальни, 2 кровати...', list: ['спальни', 'кровати', 'ванные комнаты'],}};
+
+    section.dropdown(class=data.extraClass)
+        label.title-label= data.title
+        input.dropdown__expand-check.visually-hidden(id=data.id type='checkbox')
+        label(class='text-field --dropdown' for=data.id)= data.label
+        ul(class='dropdown__exp-list')
+            each val in data.list
+                li.exp-list__item
+                    span.exp-list__name= val
+                    .exp-list__count
+                        button.count__btn-minus(type='button' disabled='') -
+                        input.count__input(type='text' readonly='' value='0')
+                        button.count__btn-plus(type='button') +
+            li.exp-list__buttons
+                +button('очистить','--mini','reset')
+                +button('применить','--mini','submit')
