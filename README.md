@@ -1,4 +1,4 @@
-## Макет страниц по поиску номеров в отеле TOXIN <img width="25" height="25" src="https://github.com/RybakovLG/HotelRoomSearch__fsd_team__aducation/blob/master/pages_img/rizzoma.svg" alt="rizzoma">
+## Макет страниц по поиску номеров в отеле TOXIN <img width="25" height="25" src="https://github.com/RybakovLG/HotelRoomSearch__fsd_team__aducation/blob/master/pages_img/toxin-logo.svg" alt="rizzoma">
 *[**Обучающее задание 2**](https://rizzoma.com/topic/d5c429337bcaa70548fb5aeedee6d92b/0_b_8ndo_78h6s/) на фронтенд разработчика от `#fsd` `#fsd_team`*
 
 -----
