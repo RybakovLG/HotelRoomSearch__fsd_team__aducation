@@ -72,13 +72,16 @@ $mainFont: Montserrat, sans-serif
 
 %mainIndents
     @media (min-width: 1400px)
-        padding-left: clamp(20px, 10%, 140px)
-        padding-right: clamp(20px, 10%, 140px)
+        padding-left: 140px
+        padding-right: 140px
 
-    @media (max-width: 1400px)
-        padding-left: clamp(20px, 5%, 140px)
-        padding-right: clamp(20px, 5%, 140px)
+    @media (min-width: 768px) and (max-width: 1400px)
+        padding-left: 6vw
+        padding-right: 6vw
 
+    @media (max-width: 768px)
+        padding-left: max(10px, 3vw)
+        padding-right: max(10px, 3vw)
 
 
 //*
